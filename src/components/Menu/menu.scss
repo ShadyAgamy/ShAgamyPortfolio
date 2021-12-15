@@ -1,0 +1,127 @@
+
+
+.menu_cont {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 18rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid rgba(#4E4E50, .5);
+    transition: all .6s ease;
+    z-index: 9;
+
+    .avatar_cont {
+        height: 40%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem 0;
+        border-bottom: 1px solid rgba(#4E4E50, .5);
+
+        img {
+            width: 13rem;
+            height: 13rem;
+            border-radius: 50%;
+            border: 6px solid rgba(#4E4E50, .5);
+            object-fit: cover;
+            filter: grayscale(.5);
+            -webkit-filter:grayscale(.5); /* Safari 6.0 - 9.0 */
+        }
+    }
+
+    &_links {
+        height: 60%;
+        flex: 1 1 100%;
+
+        ul {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-top: -2rem;
+
+            li {
+                display: block;
+                width: 100%;
+            }
+
+            a {
+                display: block;
+                width: 100%;
+                font-size: 1.1rem;
+                text-align: center;
+                padding: .6rem;
+                position: relative;
+                transition: all .6s ease;
+                z-index: 1;
+                &:before {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    height: 100%;
+                    width: 0;
+                    background-color: rgba(#C3083F, .1);
+                    transition: all .6s ease;
+                    z-index: -1;
+                }
+
+                &:hover {
+                    color: rgba(#fff, .5);
+                    font-weight: 500;
+                    &::before {
+                        width: 100%;
+                        background-color: rgba(#C3083F, .2);
+                    }
+                }
+
+                &.active {
+                    color: white;
+                    font-weight: 500;
+                    &::before {
+                        width: 100%;
+                        background-color: rgba(#C3083F, .5);
+                    }
+                }
+            }
+        }
+    }
+
+    .menu_toggle {
+        position: absolute;
+        top: 37px;
+        right: -63px;
+        z-index: 2;
+        display: none;
+      
+        @media screen and (max-width: 900px) {
+           display: block;
+        }
+
+
+        a {
+            background-color: #1A1A1C;
+            padding: .8rem 1.2rem;
+            border: 1px solid #343436;
+            border-left-color: transparent;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+
+            i {
+                font-size: 1.8rem;
+            }
+        }
+    }
+
+    &.close {
+        left: -18rem;
+    }
+    // @media screen and (max-width: 900px) {
+    //     left: -18rem;
+    //  }
+}
