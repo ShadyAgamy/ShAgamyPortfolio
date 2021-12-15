@@ -1,6 +1,6 @@
 {
+  "homepage": "http://ShadyAgamy.github.io/ShAgamyPortfolio",
   "name": "shady_agamy",
-  "homepage": "http://{ShadyAgamy}.github.io/{myPortfolio}",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
