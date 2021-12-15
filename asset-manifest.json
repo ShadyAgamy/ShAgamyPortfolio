@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/%7BShAgamyPortfolio%7D/static/css/main.801bb893.chunk.css",
-    "main.js": "/%7BShAgamyPortfolio%7D/static/js/main.769f26bb.chunk.js",
-    "main.js.map": "/%7BShAgamyPortfolio%7D/static/js/main.769f26bb.chunk.js.map",
-    "runtime-main.js": "/%7BShAgamyPortfolio%7D/static/js/runtime-main.c3fc64eb.js",
-    "runtime-main.js.map": "/%7BShAgamyPortfolio%7D/static/js/runtime-main.c3fc64eb.js.map",
-    "static/js/2.fe21a8f0.chunk.js": "/%7BShAgamyPortfolio%7D/static/js/2.fe21a8f0.chunk.js",
-    "static/js/2.fe21a8f0.chunk.js.map": "/%7BShAgamyPortfolio%7D/static/js/2.fe21a8f0.chunk.js.map",
-    "index.html": "/%7BShAgamyPortfolio%7D/index.html",
-    "precache-manifest.cb0d80691ac881f6b04aacef56a7712a.js": "/%7BShAgamyPortfolio%7D/precache-manifest.cb0d80691ac881f6b04aacef56a7712a.js",
-    "service-worker.js": "/%7BShAgamyPortfolio%7D/service-worker.js",
-    "static/css/main.801bb893.chunk.css.map": "/%7BShAgamyPortfolio%7D/static/css/main.801bb893.chunk.css.map",
-    "static/js/2.fe21a8f0.chunk.js.LICENSE.txt": "/%7BShAgamyPortfolio%7D/static/js/2.fe21a8f0.chunk.js.LICENSE.txt",
-    "static/media/avatar.svg": "/%7BShAgamyPortfolio%7D/static/media/avatar.41473127.svg",
-    "static/media/info.svg": "/%7BShAgamyPortfolio%7D/static/media/info.f6c2d61c.svg"
+    "main.css": "/ShAgamyPortfolio/static/css/main.801bb893.chunk.css",
+    "main.js": "/ShAgamyPortfolio/static/js/main.769f26bb.chunk.js",
+    "main.js.map": "/ShAgamyPortfolio/static/js/main.769f26bb.chunk.js.map",
+    "runtime-main.js": "/ShAgamyPortfolio/static/js/runtime-main.ab944a60.js",
+    "runtime-main.js.map": "/ShAgamyPortfolio/static/js/runtime-main.ab944a60.js.map",
+    "static/js/2.fe21a8f0.chunk.js": "/ShAgamyPortfolio/static/js/2.fe21a8f0.chunk.js",
+    "static/js/2.fe21a8f0.chunk.js.map": "/ShAgamyPortfolio/static/js/2.fe21a8f0.chunk.js.map",
+    "index.html": "/ShAgamyPortfolio/index.html",
+    "precache-manifest.d30724d2a2753cf429dad6b6cb29ff91.js": "/ShAgamyPortfolio/precache-manifest.d30724d2a2753cf429dad6b6cb29ff91.js",
+    "service-worker.js": "/ShAgamyPortfolio/service-worker.js",
+    "static/css/main.801bb893.chunk.css.map": "/ShAgamyPortfolio/static/css/main.801bb893.chunk.css.map",
+    "static/js/2.fe21a8f0.chunk.js.LICENSE.txt": "/ShAgamyPortfolio/static/js/2.fe21a8f0.chunk.js.LICENSE.txt",
+    "static/media/avatar.svg": "/ShAgamyPortfolio/static/media/avatar.41473127.svg",
+    "static/media/info.svg": "/ShAgamyPortfolio/static/media/info.f6c2d61c.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.c3fc64eb.js",
+    "static/js/runtime-main.ab944a60.js",
     "static/js/2.fe21a8f0.chunk.js",
     "static/css/main.801bb893.chunk.css",
     "static/js/main.769f26bb.chunk.js"
