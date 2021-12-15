@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/ShAgamyPortfolio/static/css/main.801bb893.chunk.css",
-    "main.js": "/ShAgamyPortfolio/static/js/main.d34bcab3.chunk.js",
-    "main.js.map": "/ShAgamyPortfolio/static/js/main.d34bcab3.chunk.js.map",
+    "main.js": "/ShAgamyPortfolio/static/js/main.20f3d537.chunk.js",
+    "main.js.map": "/ShAgamyPortfolio/static/js/main.20f3d537.chunk.js.map",
     "runtime-main.js": "/ShAgamyPortfolio/static/js/runtime-main.ab944a60.js",
     "runtime-main.js.map": "/ShAgamyPortfolio/static/js/runtime-main.ab944a60.js.map",
     "static/js/2.c6ca66ea.chunk.js": "/ShAgamyPortfolio/static/js/2.c6ca66ea.chunk.js",
     "static/js/2.c6ca66ea.chunk.js.map": "/ShAgamyPortfolio/static/js/2.c6ca66ea.chunk.js.map",
     "index.html": "/ShAgamyPortfolio/index.html",
-    "precache-manifest.ab49c655ad297fa2ff46eaaab2a2cb88.js": "/ShAgamyPortfolio/precache-manifest.ab49c655ad297fa2ff46eaaab2a2cb88.js",
+    "precache-manifest.1671d068e5ae90b0e4c9cea0f9d79f88.js": "/ShAgamyPortfolio/precache-manifest.1671d068e5ae90b0e4c9cea0f9d79f88.js",
     "service-worker.js": "/ShAgamyPortfolio/service-worker.js",
     "static/css/main.801bb893.chunk.css.map": "/ShAgamyPortfolio/static/css/main.801bb893.chunk.css.map",
     "static/js/2.c6ca66ea.chunk.js.LICENSE.txt": "/ShAgamyPortfolio/static/js/2.c6ca66ea.chunk.js.LICENSE.txt",
@@ -19,6 +19,6 @@
     "static/js/runtime-main.ab944a60.js",
     "static/js/2.c6ca66ea.chunk.js",
     "static/css/main.801bb893.chunk.css",
-    "static/js/main.d34bcab3.chunk.js"
+    "static/js/main.20f3d537.chunk.js"
   ]
 }
