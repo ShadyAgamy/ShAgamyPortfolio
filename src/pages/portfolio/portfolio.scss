@@ -1,10 +1,52 @@
 .portfolio_page {
 
+  .react-tabs {
+    margin-top: 5rem;
+
+    .react-tabs__tab-list {
+      border: none;
+      
+      .react-tabs__tab {
+        &:not(:last-of-type) {
+          margin-right: 1rem;
+        }
+        padding: 9px 18px;
+        font-weight: 500;
+        font-size: 1.1rem;
+        border: 1px solid #6F112E;
+        padding: 9px 18px;
+        &--selected {
+          color: #eee;
+          background: #6F112E;
+          border-color: #6F112E;
+        }
+        &:focus:after {
+          display: none;
+        }
+      }
+    }
+
+    .react-tabs__tab-panel {
+      display: block!important;
+      visibility: hidden;
+      position: relative;
+      transform: translate(0, 5rem);
+      opacity: 0;
+      transition: all .8s cubic-bezier(0.075, 0.82, 0.165, 1);
+      &--selected {
+        visibility: visible;
+        opacity: 1;
+        transform: translate(0, 0);
+      }
+    }
+  }
+
     .port_items {
+        min-height: 600px;
         display: flex;
         justify-content: space-between;
         flex-wrap: wrap;
-        margin-top: 3rem;
+        margin-top: 2.5rem;
 
         .port_item{
             width: 31.5%;
