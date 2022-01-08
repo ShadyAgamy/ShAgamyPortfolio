@@ -1,9 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;1,300;1,400&display=swap');
 
+:root {
+  --animate-duration: 700ms;
+  --animate-delay: 300ms;
+}
+
+
 body {
   font-family: 'Titillium Web', sans-serif;
   color: #a4acc4;
   background: black;
+  overflow-x: hidden;
 }
 
 a {

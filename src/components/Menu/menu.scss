@@ -10,7 +10,7 @@
     flex-direction: column;
     border-right: 1px solid rgba(#4E4E50, .5);
     transition: all .6s ease;
-    z-index: 9;
+    z-index: 9999;
 
     .avatar_cont {
         height: 40%;
@@ -55,7 +55,7 @@
                 text-align: center;
                 padding: .6rem;
                 position: relative;
-                transition: all .6s ease;
+                // transition: all .6s ease;
                 z-index: 1;
                 &:before {
                     content: "";

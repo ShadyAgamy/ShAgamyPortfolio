@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-
+import TrackVisibility from "react-on-screen";
+import "animate.css";
 import "./portfolio.scss";
 
 import ReactPaginate from "react-paginate";
@@ -64,32 +65,44 @@ export default function Portfolio() {
   //   const chevRight = <i className="fas fa-chevron-right"></i>;
   return (
     <div className="about_page portfolio_page">
-      <h2 className="main_heading">
+      <h2 className="main_heading animate__animated animate__slow animate__fadeInLeft">
         PORTFOLIO <span></span>
         <p className="shadow">PORTFOLIO</p>
       </h2>
-
-      <Tabs>
-        <TabList>
-          <Tab>
+      <div className=" animate__animated animate__slow animate__fadeInLeft">
+        <Tabs>
+          <TabList>
+            <Tab>
               React Projects
-            {/* <i className="fab fa-react"></i> */}
-          </Tab>
-          <Tab>
+              <i className="fab fa-react"></i>
+            </Tab>
+            <Tab>
               Jquery Projects
-            {/* <i className="fab fa-js"></i> */}
-          </Tab>
-          <Tab>
+              <i className="fab fa-js"></i>
+            </Tab>
+            <Tab>
               UI demo Projects
-            {/* <i className="fab fa-html5"></i> */}
-          </Tab>
-        </TabList>
+              <i className="fab fa-html5"></i>
+            </Tab>
+          </TabList>
 
-        <TabPanel> <div className="port_items"> {reactProjects && renderProjects(reactProjects)}</div></TabPanel>
-        <TabPanel> <div className="port_items"> {jqueryProjects && renderProjects(jqueryProjects)}</div></TabPanel>
-        <TabPanel> <div className="port_items"> {htmlProjects && renderProjects(htmlProjects)}</div></TabPanel>
-      </Tabs>
-
+          <TabPanel>
+            <div className="port_items">
+              {reactProjects && renderProjects(reactProjects)}
+            </div>
+          </TabPanel>
+          <TabPanel>
+            <div className="port_items">
+              {jqueryProjects && renderProjects(jqueryProjects)}
+            </div>
+          </TabPanel>
+          <TabPanel>
+            <div className="port_items">
+              {htmlProjects && renderProjects(htmlProjects)}
+            </div>
+          </TabPanel>
+        </Tabs>
+      </div>
       {/* <ReactPaginate
         previousLabel={chevLeft}
         nextLabel={chevRight}

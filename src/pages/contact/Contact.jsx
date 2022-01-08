@@ -1,14 +1,14 @@
 import React from 'react';
-
-import { Link } from 'react-router-dom';
+import TrackVisibility from "react-on-screen";
+import "animate.css";
 
 import "./contact.scss";
 
 export default function Contact() {
     return (
         <div className="about_page">
-            <h2 className="main_heading">CONTACT ME <span></span><p className="shadow">CONTACT ME</p></h2>
-            <div className="contact_sec">
+            <h2 className="main_heading animate__animated animate__slow animate__fadeInLeft">CONTACT ME <span></span><p className="shadow">CONTACT ME</p></h2>
+            <div className="contact_sec animate__animated animate__slow animate__fadeInUp animate__delay-1s">
                 <div className="contact_sec_panel">
                     <div className="icon"><i className="fas fa-phone-alt"></i></div>
                     <div className="text">
