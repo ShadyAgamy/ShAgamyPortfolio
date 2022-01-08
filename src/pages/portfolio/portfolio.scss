@@ -19,9 +19,26 @@
           color: #eee;
           background: #6F112E;
           border-color: #6F112E;
+
+          .fa-react {
+            color: #4FB7D3;
+          }
+          .fa-js {
+            color: #EAD41C;
+          }
+          .fa-html5 {
+            color: #D84B25;
+          }
         }
         &:focus:after {
           display: none;
+        }
+
+        i {
+          color: currentColor;
+          margin-left: 8px;
+          font-size: 16px;
+          margin-top: 1px;
         }
       }
     }
@@ -44,15 +61,19 @@
     .port_items {
         min-height: 600px;
         display: flex;
-        justify-content: space-between;
         flex-wrap: wrap;
         margin-top: 2.5rem;
 
+       
+
         .port_item{
-            width: 31.5%;
+            width: 30.5%;
             margin-bottom: 3rem;
             display: flex;
            flex-direction: column;
+           &:not(:last-of-type) {
+            margin-right: 2rem;
+          }
 
            @media screen and (max-width: 750px) {
             width: 100%;

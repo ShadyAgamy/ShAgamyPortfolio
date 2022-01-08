@@ -1,5 +1,5 @@
 const  portfolioData = [
-    {id: "CRWN-app", name: "CRWN-app", url:"https://crwn-ecomm-demo-app.herokuapp.com/", desc:"React, Redux E-Commerce demo app", imgSrc : "./imgs/projects/crwn.png", type: "react"},
+    {id: "CRWN-app", name: "E-commerce", url:"https://crwn-ecomm-demo-app.herokuapp.com/", desc:"React, Redux E-Commerce demo app", imgSrc : "./imgs/projects/crwn.png", type: "react"},
     {id: "Shotmed", name: "Shotmed", url:"https://shadyagmy.github.io/Shotmed/build/", desc:"HTML5, CSS3, JQUERY Modern website", imgSrc : "./imgs/projects/shotmed.png" , type: "jquery"},
     {id: "EFS", name: "EFS", url:"https://www.efsmi.com/en/", desc:"HTML5, CSS3, JQUERY Modern website", imgSrc : "./imgs/projects/EFS.png", type: "jquery"},
     {id: "CastHub", name: "CastHub", url:"https://www.cast-hub.tv/en", desc:"HTML5, CSS3, JQUERY web application", imgSrc : "./imgs/projects/castHub.png", type: "jquery"},
@@ -11,6 +11,7 @@ const  portfolioData = [
     {id: "TRILLO", name: "TRILLO", url:"https://shadyagmy.github.io/Trillo-/", desc:"Modern web application landing page was totally structured with the CSS3 flex box property", imgSrc : "./imgs/projects/trillo.png", type: "html"},
     {id: "Conrad", name: "Conrad", url:"https://shadyagmy.github.io/Conrad/", desc:"Simple landing page have created using Html, Css and Javascript", imgSrc : "./imgs/projects/conrad.png", type: "html"},
     {id: "TINKER", name: "TINKER", url:"https://shadyagmy.github.io/Tinker-web-site-page/", desc:"Simple landing page was created using Html, Css and ES5", imgSrc : "./imgs/projects/tinker.png", type: "html"},
+    {id: "face-detection", name: "FACE-DETECTION", url:"https://shadyagamy.github.io/facerecognition/", desc:"Face detection React App using clarifai face detection model API", imgSrc : "./imgs/projects/face-detection.png", type: "react"},
 ];
 
 export default portfolioData
