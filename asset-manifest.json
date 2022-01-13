@@ -1,19 +1,19 @@
 {
   "files": {
     "main.css": "/ShAgamyPortfolio/static/css/main.f948b858.chunk.css",
-    "main.js": "/ShAgamyPortfolio/static/js/main.1185cf91.chunk.js",
-    "main.js.map": "/ShAgamyPortfolio/static/js/main.1185cf91.chunk.js.map",
+    "main.js": "/ShAgamyPortfolio/static/js/main.56322576.chunk.js",
+    "main.js.map": "/ShAgamyPortfolio/static/js/main.56322576.chunk.js.map",
     "runtime-main.js": "/ShAgamyPortfolio/static/js/runtime-main.ab944a60.js",
     "runtime-main.js.map": "/ShAgamyPortfolio/static/js/runtime-main.ab944a60.js.map",
     "static/css/2.efc52865.chunk.css": "/ShAgamyPortfolio/static/css/2.efc52865.chunk.css",
-    "static/js/2.a1e17ef6.chunk.js": "/ShAgamyPortfolio/static/js/2.a1e17ef6.chunk.js",
-    "static/js/2.a1e17ef6.chunk.js.map": "/ShAgamyPortfolio/static/js/2.a1e17ef6.chunk.js.map",
+    "static/js/2.1d7c459e.chunk.js": "/ShAgamyPortfolio/static/js/2.1d7c459e.chunk.js",
+    "static/js/2.1d7c459e.chunk.js.map": "/ShAgamyPortfolio/static/js/2.1d7c459e.chunk.js.map",
     "index.html": "/ShAgamyPortfolio/index.html",
-    "precache-manifest.d6156cfe973e049e1bd91eee1d90ae9f.js": "/ShAgamyPortfolio/precache-manifest.d6156cfe973e049e1bd91eee1d90ae9f.js",
+    "precache-manifest.3b6938e1212bc8938712579bc1731593.js": "/ShAgamyPortfolio/precache-manifest.3b6938e1212bc8938712579bc1731593.js",
     "service-worker.js": "/ShAgamyPortfolio/service-worker.js",
     "static/css/2.efc52865.chunk.css.map": "/ShAgamyPortfolio/static/css/2.efc52865.chunk.css.map",
     "static/css/main.f948b858.chunk.css.map": "/ShAgamyPortfolio/static/css/main.f948b858.chunk.css.map",
-    "static/js/2.a1e17ef6.chunk.js.LICENSE.txt": "/ShAgamyPortfolio/static/js/2.a1e17ef6.chunk.js.LICENSE.txt",
+    "static/js/2.1d7c459e.chunk.js.LICENSE.txt": "/ShAgamyPortfolio/static/js/2.1d7c459e.chunk.js.LICENSE.txt",
     "static/media/avatar.svg": "/ShAgamyPortfolio/static/media/avatar.41473127.svg",
     "static/media/info.svg": "/ShAgamyPortfolio/static/media/info.f6c2d61c.svg",
     "static/media/my_resume.pdf": "/ShAgamyPortfolio/static/media/my_resume.f49041be.pdf"
@@ -21,8 +21,8 @@
   "entrypoints": [
     "static/js/runtime-main.ab944a60.js",
     "static/css/2.efc52865.chunk.css",
-    "static/js/2.a1e17ef6.chunk.js",
+    "static/js/2.1d7c459e.chunk.js",
     "static/css/main.f948b858.chunk.css",
-    "static/js/main.1185cf91.chunk.js"
+    "static/js/main.56322576.chunk.js"
   ]
 }
