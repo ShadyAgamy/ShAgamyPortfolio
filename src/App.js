@@ -61,4 +61,3 @@ class App extends React.Component {
 export default App ;
 
 
-// "homepage": "http://ShadyAgamy.github.io/ShAgamyPortfolio",

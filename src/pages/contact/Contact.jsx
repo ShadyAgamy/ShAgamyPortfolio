@@ -1,5 +1,4 @@
 import React from 'react';
-import TrackVisibility from "react-on-screen";
 import "animate.css";
 
 import "./contact.scss";

@@ -1,9 +1,7 @@
 import React, { useState } from "react";
-import TrackVisibility from "react-on-screen";
 import "animate.css";
 import "./portfolio.scss";
 
-import ReactPaginate from "react-paginate";
 
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
@@ -28,10 +26,13 @@ export default function Portfolio() {
     return type === "html";
   });
 
+
+
   //   const currentPageData = data
   // .slice(offset, offset + PER_PAGE)
   const renderProjects = (projects) => {
     return projects.map(({ id, name, url, desc, imgSrc }) => {
+      console.log(imgSrc)
       return (
         <div key={id} className="port_item">
           <div
@@ -55,14 +56,10 @@ export default function Portfolio() {
     });
   };
 
-  //   const pageCount = Math.ceil(data.length / PER_PAGE);
+  const react =  renderProjects(reactProjects);
+  const jquery =   renderProjects(jqueryProjects);
+  const html =   renderProjects(htmlProjects);
 
-  //   function handlePageClick({ selected: selectedPage }) {
-  //     setCurrentPage(selectedPage);
-  //   }
-
-  //   const chevLeft = <i className="fas fa-chevron-left"></i>;
-  //   const chevRight = <i className="fas fa-chevron-right"></i>;
   return (
     <div className="about_page portfolio_page">
       <h2 className="main_heading animate__animated animate__slow animate__fadeInLeft">
@@ -88,17 +85,17 @@ export default function Portfolio() {
 
           <TabPanel>
             <div className="port_items">
-              {reactProjects && renderProjects(reactProjects)}
+              {react}
             </div>
           </TabPanel>
           <TabPanel>
             <div className="port_items">
-              {jqueryProjects && renderProjects(jqueryProjects)}
+              {jquery}
             </div>
           </TabPanel>
           <TabPanel>
             <div className="port_items">
-              {htmlProjects && renderProjects(htmlProjects)}
+              {html}
             </div>
           </TabPanel>
         </Tabs>
