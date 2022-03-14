@@ -1,7 +1,5 @@
 import React from 'react';
 import "animate.css";
-import { Link } from 'react-router-dom';
-
 import "./about.scss";
 import  mainLogo  from "../../assets/info.svg";
 
@@ -21,7 +19,7 @@ export default function About() {
                         <li><span>Address</span>: 6 Horeya square, maadi, egypt</li>
                         <li><span>Freelance</span>: Available</li>
                     </ul>
-                    <Link className="custom_btn" to="/Shadi_Agamy_-_Front_end_Developer.pdf" target="_blank" download>Download cv</Link>
+                    <a className="custom_btn" href="Shadi_Agamy_-_Front_end_Developer.pdf" target="_blank" download>Download cv</a>
                 </div>
                 
             </div>
