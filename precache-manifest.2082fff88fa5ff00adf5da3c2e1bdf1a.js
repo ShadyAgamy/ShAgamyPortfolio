@@ -1,31 +1,35 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "d303e37c6315a41aa102bb5831f78630",
+    "revision": "9153f201540e934b2b262a8f5687003c",
     "url": "/ShAgamyPortfolio/index.html"
   },
   {
-    "revision": "05a61a68e21411dfcea0",
+    "revision": "379c46378fdd1cdadd0a",
     "url": "/ShAgamyPortfolio/static/css/2.efc52865.chunk.css"
   },
   {
-    "revision": "4d75a771912217ae9aa3",
+    "revision": "69a58b7d15868684629f",
     "url": "/ShAgamyPortfolio/static/css/main.a63db0f6.chunk.css"
   },
   {
-    "revision": "05a61a68e21411dfcea0",
-    "url": "/ShAgamyPortfolio/static/js/2.0c31bbee.chunk.js"
+    "revision": "379c46378fdd1cdadd0a",
+    "url": "/ShAgamyPortfolio/static/js/2.b621b6f8.chunk.js"
   },
   {
     "revision": "9b318b6fb13190fe82c0677e9264b3c7",
-    "url": "/ShAgamyPortfolio/static/js/2.0c31bbee.chunk.js.LICENSE.txt"
+    "url": "/ShAgamyPortfolio/static/js/2.b621b6f8.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "4d75a771912217ae9aa3",
-    "url": "/ShAgamyPortfolio/static/js/main.5495be3b.chunk.js"
+    "revision": "69a58b7d15868684629f",
+    "url": "/ShAgamyPortfolio/static/js/main.1bb32c86.chunk.js"
   },
   {
     "revision": "3cca0d8e1007df819b0d",
     "url": "/ShAgamyPortfolio/static/js/runtime-main.ab944a60.js"
+  },
+  {
+    "revision": "2e93e10f1c3f6dee1b0a8a9320448ebe",
+    "url": "/ShAgamyPortfolio/static/media/Shadi_Agamy_-_Front_end_Developer.2e93e10f.pdf"
   },
   {
     "revision": "41473127edeae2504a979d98d1b84122",
