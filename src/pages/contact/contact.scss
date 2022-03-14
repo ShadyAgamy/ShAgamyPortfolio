@@ -1,0 +1,90 @@
+.contact_sec {
+    margin-top: 4rem;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+
+    @media screen and (max-width: 1200px) {
+        width: 100%;
+    }
+
+
+    &_panel {
+        background-color: #1A1A1C;
+        display: flex;
+        padding: 2rem;
+        margin-bottom: 2rem;
+        align-items: flex-start;
+
+        @media screen and (max-width: 600px) {
+           flex-direction: column;
+        }
+
+        .icon {
+            border: 1px solid rgba(#4E4E50, .5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1.4rem;
+            margin-right: 1rem;
+
+            @media screen and (max-width: 600px) {
+                margin-right: 0;
+                margin-bottom: 1rem;
+             }
+
+            i {
+                font-size: 2rem;
+            
+            }
+        }
+
+        .text{
+            h4 {
+                font-size: 1.4rem;
+                font-weight: 600;
+                margin-bottom: 1.2rem;
+            }
+
+            a {
+                color: #a4acc4;
+                font-size: 1.2rem;
+                display: block;
+                margin-bottom: .5rem;
+                font-weight: 300;
+                transition: all .5s cubic-bezier(0.075, 0.82, 0.165, 1);
+                &:hover {
+                    color: #C3083F;
+                }
+            }
+        }
+    }
+
+    &.section-form {
+        .input_group {
+            margin-top: 30px;
+            position: relative;
+            label {
+                position: absolute;
+                left: 15px;
+                top: -13px;
+                background: #10121b;
+                transition: all .4s ease-out;
+                pointer-events: none;
+                padding: 0 10px;
+                font-size: .94rem;
+            }
+
+            input {
+                border: 1px solid #2e344e;
+                font-size: 1rem;
+                height: 44px;
+                padding: 0 15px;
+                background: transparent;
+                border: 1px solid #2e344e;
+                font-family: Nunito,sans-serif;
+                color: #a4acc4;
+            }
+        }
+    }
+}
