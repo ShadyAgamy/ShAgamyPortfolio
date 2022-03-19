@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/ShAgamyPortfolio/static/css/main.a63db0f6.chunk.css",
-    "main.js": "/ShAgamyPortfolio/static/js/main.d8e154ad.chunk.js",
-    "main.js.map": "/ShAgamyPortfolio/static/js/main.d8e154ad.chunk.js.map",
+    "main.js": "/ShAgamyPortfolio/static/js/main.124e9140.chunk.js",
+    "main.js.map": "/ShAgamyPortfolio/static/js/main.124e9140.chunk.js.map",
     "runtime-main.js": "/ShAgamyPortfolio/static/js/runtime-main.ab944a60.js",
     "runtime-main.js.map": "/ShAgamyPortfolio/static/js/runtime-main.ab944a60.js.map",
     "static/css/2.efc52865.chunk.css": "/ShAgamyPortfolio/static/css/2.efc52865.chunk.css",
     "static/js/2.9e570a88.chunk.js": "/ShAgamyPortfolio/static/js/2.9e570a88.chunk.js",
     "static/js/2.9e570a88.chunk.js.map": "/ShAgamyPortfolio/static/js/2.9e570a88.chunk.js.map",
     "index.html": "/ShAgamyPortfolio/index.html",
-    "precache-manifest.5926c7e62673da769b74cd42f4954726.js": "/ShAgamyPortfolio/precache-manifest.5926c7e62673da769b74cd42f4954726.js",
+    "precache-manifest.8e7382d81b906f5a27795264a27e016d.js": "/ShAgamyPortfolio/precache-manifest.8e7382d81b906f5a27795264a27e016d.js",
     "service-worker.js": "/ShAgamyPortfolio/service-worker.js",
     "static/css/2.efc52865.chunk.css.map": "/ShAgamyPortfolio/static/css/2.efc52865.chunk.css.map",
     "static/css/main.a63db0f6.chunk.css.map": "/ShAgamyPortfolio/static/css/main.a63db0f6.chunk.css.map",
@@ -22,6 +22,6 @@
     "static/css/2.efc52865.chunk.css",
     "static/js/2.9e570a88.chunk.js",
     "static/css/main.a63db0f6.chunk.css",
-    "static/js/main.d8e154ad.chunk.js"
+    "static/js/main.124e9140.chunk.js"
   ]
 }
