@@ -78,7 +78,7 @@ export default function Portfolio() {
               <i className="fab fa-js"></i>
             </Tab>
             <Tab>
-              UI demo Projects
+              UI Projects
               <i className="fab fa-html5"></i>
             </Tab>
           </TabList>
