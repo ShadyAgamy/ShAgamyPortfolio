@@ -1,6 +1,7 @@
 const  portfolioData = [
-    {id: "CRWN-app", name: "E-commerce", url:"https://crwn-ecomm-demo-app.herokuapp.com/", desc:"React, Redux E-Commerce demo app", imgSrc : "./imgs/projects/crwn.png", type: "react"},
+    {id: "cryptoverse", name: "Crypto verse", url:"https://shadyagamy.github.io/cryptoapp/", desc:"Crypto currencies Application using (React, Redux Toolkit and Ant design)", imgSrc : "./imgs/projects/cryptoverse.png", type: "react"},
     {id: "travel-advisor", name: "travel-advisor", url:"https://shadyagamy.github.io/TravelAdvisor/", desc:"Travel Companion Application using Google Maps (React and Material UI)", imgSrc : "./imgs/projects/traveladvisor.png", type: "react"},
+    {id: "CRWN-app", name: "E-commerce", url:"https://crwn-ecomm-demo-app.herokuapp.com/", desc:"React, Redux E-Commerce demo app", imgSrc : "./imgs/projects/crwn.png", type: "react"},
     {id: "Shotmed", name: "Shotmed", url:"https://shadyagmy.github.io/Shotmed/build/", desc:"HTML5, CSS3, JQUERY Modern website", imgSrc : "./imgs/projects/shotmed.png" , type: "jquery"},
     {id: "EFS", name: "EFS", url:"https://www.efsmi.com/en/", desc:"HTML5, CSS3, JQUERY Modern website", imgSrc : "./imgs/projects/EFS.png", type: "jquery"},
     {id: "CastHub", name: "CastHub", url:"https://www.cast-hub.tv/en", desc:"HTML5, CSS3, JQUERY web application", imgSrc : "./imgs/projects/castHub.png", type: "jquery"},
