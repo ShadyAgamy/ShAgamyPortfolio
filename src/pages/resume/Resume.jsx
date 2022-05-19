@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import "animate.css";
 import "./resume.scss";
 import TrackVisibility from "react-on-screen";
-import Particles from "react-particles-js";
+import Particles from "react-tsparticles";
 
 import ProgressBar from "react-animated-progress-bar";
 
