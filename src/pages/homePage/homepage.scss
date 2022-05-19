@@ -3,7 +3,7 @@
     align-items: center;
     justify-content: center;
     position: relative;
-    
+    height: 100vh;
     &_section {
         text-align: center;
         width: 80%;
@@ -14,32 +14,28 @@
             width: 100%;
         }
         h1 {
-            font-size: 3.2rem;
+            font-size: 3.7rem;
             color: white;
             font-weight: bold;
             margin-bottom: 1.5rem;
             margin-top: 2rem;
-
             .co_main {
                 @media screen and (max-width: 600px) {
                     display: block;
                 }
             }
         }
-
         p {
-            font-size: 1.3rem;
-            line-height: 1.6;
-            width: 90%;
+            font-size: 1.5rem;
+            width: 85%;
             margin: 0 auto;
+            margin-bottom: 2rem;
         }
-        
         .links {
             display: flex;
             align-items: center;
             justify-content: center;
             margin-top: 1.5rem;
-
             a {
                 margin: 0 .7rem;
                 display: block;
@@ -48,13 +44,11 @@
                 padding: .8rem;
                 text-transform: uppercase;
                 transition: all .5s cubic-bezier(0.075, 0.82, 0.165, 1);
-
                 i {
-                  font-size: 1.1rem;
-                  color: #a4acc4;
-                  transition: all .8s cubic-bezier(0.075, 0.82, 0.165, 1);
+                    font-size: 1.1rem;
+                    color: #a4acc4;
+                    transition: all .8s cubic-bezier(0.075, 0.82, 0.165, 1);
                 }
-
                 &:hover {
                     border-color: #C3083F;
                     i {
@@ -65,7 +59,6 @@
         }
     }
 }
-
 
 #tsparticles {
     position: absolute;

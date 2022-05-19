@@ -9,9 +9,9 @@ export default function Menu({ menuOpen, toggleMenu }) {
   return (
     <div className={`menu_cont bg_black ${menuOpen ? 'open' : 'close'}`}>
       <div className="menu_toggle">
-        <a onClick={toggleMenu}>
+        <span onClick={toggleMenu}>
           <i className={`fas  ${menuOpen ? 'fa-times' : 'fa-bars'} `}></i>
-        </a>
+        </span>
       </div>
       <div className="avatar_cont">
         <img src={mainLogo} alt="" />
