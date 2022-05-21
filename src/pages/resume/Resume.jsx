@@ -1,7 +1,6 @@
 /* eslint-disable react/jsx-no-target-blank */
 import React, { Component } from "react";
 import "./resume.scss";
-import TrackVisibility from "react-on-screen";
 import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
 
