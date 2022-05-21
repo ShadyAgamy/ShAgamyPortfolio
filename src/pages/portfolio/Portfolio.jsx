@@ -66,7 +66,7 @@ export default function Portfolio() {
         PORTFOLIO <span></span>
         <p className="shadow">PORTFOLIO</p>
       </h2>
-      <div className=" animate__animated animate__slow animate__fadeInLeft">
+      <div className=" animate__animated animate__slow animate__fadeInUp animate__delay-1s">
         <Tabs>
           <TabList>
             <Tab>
