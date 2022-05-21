@@ -1,95 +1,105 @@
 /* eslint-disable react/jsx-no-target-blank */
 import React, { Component } from "react";
-import "animate.css";
 import "./resume.scss";
 import TrackVisibility from "react-on-screen";
 import Particles from "react-tsparticles";
+import { loadFull } from "tsparticles";
 
 import ProgressBar from "react-animated-progress-bar";
 
-// import  htmlImg  from "";
-
 const practicles_config = {
-  style: {
-    height: "100%",
-    // background: "#000",
-  },
   params: {
-    particles: {
-      number: {
-        value: 6,
-        density: {
-          enable: true,
-          value_area: 1000,
+    background: {
+      color: {
+        value: "transparent",
+      },
+    },
+    fpsLimit: 120,
+    interactivity: {
+      events: {
+        onHover: {
+          enable: false,
         },
       },
-      line_linked: {
+    },
+    particles: {
+      collisions: {
         enable: false,
       },
       move: {
-        speed: 0.8,
-        out_mode: "out",
+        direction: "none",
+        enable: true,
+        outModes: {
+          default: "bounce",
+        },
+        random: true,
+        speed: 1,
+        straight: false,
+      },
+      number: {
+        density: {
+          enable: true,
+          area: 3000,
+        },
+        value: 40,
+      },
+      opacity: {
+        value: 0.3,
       },
       shape: {
         type: ["image"],
         image: [
           {
             src: "./imgs/langImgs/react.png",
-            height: 10,
+            height: 50,
           },
           {
             src: "./imgs/langImgs/html.png",
-            height: 10,
+            height: 50,
           },
           {
             src: "./imgs/langImgs/css.png",
-            height: 10,
+            height: 50,
           },
           {
             src: "./imgs/langImgs/js.png",
-            height: 10,
+            height: 50,
           },
           {
             src: "./imgs/langImgs/gulp.png",
-            height: 10,
+            height: 50,
           },
           {
             src: "./imgs/langImgs/git.png",
-            height: 10,
+            height: 50,
           },
           {
             src: "./imgs/langImgs/sass.png",
-            height: 10,
+            height: 50,
           },
         ],
       },
-      color: {
-        value: "#CCC",
-      },
       size: {
-        value: 30,
-        random: false,
-        anim: {
-          enable: true,
-          speed: 4,
-          size_min: 10,
-          sync: false,
-        },
+        value: { min: 5, max: 10 },
       },
     },
-    retina_detect: false,
+    detectRetina: true,
   },
+};
+
+const particlesInit = async (main) => {
+  await loadFull(main);
 };
 
 class Resume extends Component {
   state = {
     skills: [
-      { id: "html5", name: "html5", percentage: "95" },
+      { id: "html5", name: "html5", percentage: "90" },
       { id: "CSS3", name: "CSS3", percentage: "90" },
-      { id: "Javascript", name: "Javascript", percentage: "70" },
-      { id: "jQuery", name: "jQuery", percentage: "85" },
+      { id: "Javascript", name: "Javascript", percentage: "80" },
+      { id: "jQuery", name: "jQuery", percentage: "90" },
       { id: "ReactJS", name: "ReactJS", percentage: "80" },
-      { id: "Redux", name: "Redux", percentage: "70" },
+      { id: "Redux", name: "Redux", percentage: "80" },
     ],
     workExperience: [
       {
@@ -122,12 +132,12 @@ class Resume extends Component {
           <div className="skill_name">{name}</div>
           <ProgressBar
             width="100%"
-            height="7px"
+            height="8px"
             rect
             fontColor="gray"
             percentage={percentage}
-            rectPadding="1px"
-            rectBorderRadius="5px"
+            rectPadding="2px"
+            rectBorderRadius="15px"
             trackPathColor="rgba(111, 34, 50, .5)"
             bgColor="#C3083F"
           />
@@ -153,43 +163,26 @@ class Resume extends Component {
 
     return (
       <div className="about_page" style={practicles_config.style}>
-        <Particles params={practicles_config.params} />
+        <Particles id="tsparticles" init={particlesInit} options={practicles_config.params} />
 
         <h2 className="main_heading animate__animated animate__slow animate__fadeInLeft">
           MY SKILLS <span></span>
-          <p className="shadow animate__animated animate__slow animate__fadeInLeft">
-            MY SKILLS
-          </p>
+          <p className="shadow animate__animated animate__slow animate__fadeInLeft">MY SKILLS</p>
         </h2>
-        <div
-          style={{ marginTop: "0rem" }}
-          className="animate__animated animate__slow animate__fadeInUp"
-        >
+        <div style={{ marginTop: "0rem" }} className="">
           <div className="skills_section">{mappedSkills}</div>
         </div>
 
         <div className="resume_section ">
-          <TrackVisibility once>
-            {({ isVisible }) =>
-              isVisible && (
-                <h2 className="main_heading animate__animated animate__slow animate__fadeInLeft animate__delay-1s">
-                  RESUME <span></span>
-                </h2>
-              )
-            }
-          </TrackVisibility>
-          <TrackVisibility once>
-            {({ isVisible }) =>
-              isVisible && (
-                <div className="resume_section_main animate__animated animate__slow animate__fadeInLeft animate__delay-2s">
-                  <h4 className="sec_heading">
-                    <i className="fas fa-briefcase"></i>Working Experience
-                  </h4>
-                  <div className="work_ex_sec">{mappedWorkExperience}</div>
-                </div>
-              )
-            }
-          </TrackVisibility>
+          <h2 className="main_heading animate__animated animate__slow animate__fadeInLeft animate__delay-1s">
+            RESUME <span></span>
+          </h2>
+          <div className="resume_section_main animate__animated animate__slow animate__fadeInUp animate__delay-2s">
+            <h4 className="sec_heading">
+              <i className="fas fa-briefcase"></i>Working Experience
+            </h4>
+            <div className="work_ex_sec">{mappedWorkExperience}</div>
+          </div>
         </div>
       </div>
     );

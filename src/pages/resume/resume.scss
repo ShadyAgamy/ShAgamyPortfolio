@@ -3,7 +3,6 @@
     flex-wrap: wrap;
     margin-top: 3rem;
     justify-content: space-between;
-
     .skill {
         width: 47%;
         display: flex;
@@ -18,7 +17,6 @@
             font-weight: 600;
             font-size: 1.1rem;
         }
-
         .progress-bar-rect-wrap-container {
             flex-direction: row-reverse;
             h2 {
@@ -26,24 +24,21 @@
                 margin-left: 0!important;
                 font-size: 1.1rem!important;
             }
-
-            .inner-rect-bar{
+            .inner-rect-bar {
                 background-color: #C3083F!important;
                 border-radius: 0px!important;
             }
         }
     }
-
 }
 
-.sec_heading{
+.sec_heading {
     text-transform: capitalize;
     color: #eee;
     font-size: 1.8rem;
     font-weight: 600;
     display: flex;
     align-items: center;
-
     i {
         color: #eee;
         font-size: 1.4rem;
@@ -53,21 +48,21 @@
 
 .resume_section {
     margin-top: 5rem;
+    z-index: 2;
+    position: relative;
 }
-.resume_section_main{
-    margin-top: 3rem;
 
-    .work_ex_sec{
+.resume_section_main {
+    margin-top: 3rem;
+    .work_ex_sec {
         display: flex;
         flex-direction: column;
         margin: 2rem 0;
-
-        .work_ex{
+        .work_ex {
             display: flex;
             padding: .4rem 0 3rem 1rem;
             border-left: 2px solid #4E4E50;
             position: relative;
-
             &::before {
                 content: "";
                 position: absolute;
@@ -79,7 +74,6 @@
                 background-color: #10121B;
                 border: 3px solid #4E4E50;
             }
-
             &--period {
                 width: 30%;
                 max-width: 14rem;
@@ -87,10 +81,8 @@
                 font-size: 1rem;
                 margin-top: 5px;
             }
-
             &--details {
                 width: 70%;
-
                 .role {
                     font-size: 1.4rem;
                     text-transform: capitalize;
@@ -106,21 +98,17 @@
                         background-color: #4E4E50;
                     }
                 }
-
                 .company {
                     text-transform: capitalize;
-                    color: white;
+                    color: #b7b7b7;
                 }
             }
         }
     }
 }
 
-
-
 // .cert_slider{
 //     width: 100%;
-
 //     .swiper-container {
 //         width: 100%;
 //         height: 100%;
@@ -129,7 +117,6 @@
 //     .swiper-slide {
 //         width:100%;
 //         height:350px;
-
 //         img {
 //             width: 100%;
 //             height: 100%;
@@ -137,4 +124,3 @@
 //         }
 //     }
 // }
-
