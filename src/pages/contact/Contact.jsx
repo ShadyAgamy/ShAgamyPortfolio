@@ -1,21 +1,25 @@
 import React from "react";
 import emailjs from "emailjs-com";
-import Swal from "sweetalert2";
+import Swal from 'sweetalert2/dist/sweetalert2.js';
 
 import "./contact.scss";
 const SERVICE_ID = "service_fvjeat7";
 const TEMPLATE_ID = "template_jnlu471";
 const USER_ID = "CNggA-Bfla9h4Jykd";
 const Contact = () => {
-  const submitEmail = (e) => {
+
+
+  const submitEmail =  (e) => {
     e.preventDefault();
-    console.log(e.target);
+    e.persist();
     emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, e.target, USER_ID).then(
       (result) => {
-        Swal.fire({
+        e.target.reset();
+         Swal.fire({
           icon: "success",
           title: "Message Sent Successfully",
-        });
+        }) 
+        
       },
       (error) => {
         console.log(error.text);
@@ -26,6 +30,7 @@ const Contact = () => {
         });
       }
     );
+   
   };
 
   return (
@@ -35,8 +40,8 @@ const Contact = () => {
         <p className="shadow">CONTACT ME</p>
       </h2>
       <div className="contact">
-        <div className="contact_info animate__animated animate__slow animate__fadeInUp animate__delay-1s">
-          <div className="contact_info_panel">
+        <div className="contact_info ">
+          <div className="contact_info_panel animate__animated animate__slow animate__fadeInUp ">
             <div className="icon">
               <i className="fas fa-phone-alt"></i>
             </div>
@@ -45,7 +50,7 @@ const Contact = () => {
               <a href="tel:+201020285787">+201020285787</a>
             </div>
           </div>
-          <div className="contact_info_panel">
+          <div className="contact_info_panel animate__animated animate__slow animate__fadeInUp animate__delay-1s">
             <div className="icon">
               <i className="far fa-envelope"></i>
             </div>
@@ -55,7 +60,7 @@ const Contact = () => {
               <a href="mailto: shadyalonsoo@gmail.com">shadyalonsoo@gmail.com</a>
             </div>
           </div>
-          <div className="contact_info_panel">
+          <div className="contact_info_panel animate__animated animate__slow animate__fadeInUp animate__delay-2s">
             <div className="icon">
               <i className="fas fa-map-marker-alt"></i>
             </div>
@@ -65,7 +70,7 @@ const Contact = () => {
             </div>
           </div>
         </div>
-        <div className="contact_form ">
+        <div className="contact_form animate__animated animate__slow animate__fadeInUp animate__delay-3s">
           <p>Get In Touch</p>
           <form id="contact-form" onSubmit={submitEmail}>
             <div className="input_group">
@@ -102,7 +107,7 @@ const Contact = () => {
             </div>
 
             <div className="input_group">
-              <button type="submit" className="primary-btn submit">
+              <button type="submit" className="blue_btn">
                 Send
               </button>
             </div>
