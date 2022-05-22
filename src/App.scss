@@ -1,8 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;1,300;1,400&display=swap');
+@import "./alertDrakTheme.scss";
 :root {
     --animate-duration: 500ms;
     --animate-delay: 500ms;
     --mainColor: #C3083F;
+    --seconderyColor: #255A83;
 }
 
 ::-moz-selection {
@@ -69,5 +71,33 @@ a {
             flex: 1 1 100%;
             margin-left: 0;
         }
+    }
+}
+
+.blue_btn,
+.swal2-confirm.swal2-styled {
+    align-items: center;
+    appearance: none;
+    background: var(--seconderyColor);
+    border: 0;
+    box-shadow: unset!important;
+    color: #fff;
+    cursor: pointer;
+    height: 48px;
+    min-width: 8rem;
+    justify-content: center;
+    line-height: 1;
+    list-style: none;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    will-change: box-shadow, transform;
+    font-size: 18px;
+    &:focus,
+    &:hover,
+    &:active {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1));
     }
 }

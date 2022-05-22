@@ -1,10 +1,9 @@
 .contact {
-    margin-top: 4rem;
+    margin-top: 7rem;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
     &>* {
-        width: 49%;
         display: flex;
         flex-direction: column;
         @media screen and (max-width: 1200px) {
@@ -14,39 +13,43 @@
 }
 
 .contact_info {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-bottom: 3rem;
     &_panel {
         background-color: #1A1A1C;
         display: flex;
-        padding: 2rem;
-        margin-bottom: 2rem;
-        align-items: flex-start;
+        padding: 1.5rem;
+        margin-bottom: 1.2rem;
+        width: 30%;
+        min-width: 340px;
+        margin-right: 1%;
+        align-items: center;
         @media screen and (max-width: 600px) {
-            flex-direction: column;
+            // flex-direction: column;
         }
         .icon {
-            border: 1px solid rgba(#4E4E50, .5);
+            border: 1px solid rgba(78, 78, 80, 0.5);
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 1.4rem;
+            padding: 1rem;
             margin-right: 1rem;
-            @media screen and (max-width: 600px) {
-                margin-right: 0;
-                margin-bottom: 1rem;
-            }
             i {
-                font-size: 2rem;
+                font-size: 1.5rem;
             }
         }
         .text {
             h4 {
-                font-size: 1.4rem;
+                font-size: 1.2rem;
                 font-weight: 600;
-                margin-bottom: 1.2rem;
+                margin-bottom: 1rem;
             }
             a {
                 color: #a4acc4;
-                font-size: 1.2rem;
+                font-size: 1rem;
                 display: block;
                 margin-bottom: .5rem;
                 font-weight: 300;
@@ -60,6 +63,8 @@
 }
 
 .contact_form {
+    width: 100%;
+    max-width: 45rem;
     &>p {
         font-size: 1.5rem;
         font-weight: 600;
@@ -94,29 +99,6 @@
             height: 10rem;
             padding: 1rem;
         }
-        button {
-            align-items: center;
-            appearance: none;
-            background: #3581B8;
-            border: 0;
-            color: #fff;
-            cursor: pointer;
-            height: 48px;
-            min-width: 8rem;
-            justify-content: center;
-            line-height: 1;
-            list-style: none;
-            text-decoration: none;
-            user-select: none;
-            -webkit-user-select: none;
-            touch-action: manipulation;
-            white-space: nowrap;
-            will-change: box-shadow, transform;
-            font-size: 18px;
-        }
-        &:focus {}
-        &:hover {}
-        &:active {}
     }
 }
 
