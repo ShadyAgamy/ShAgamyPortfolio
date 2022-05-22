@@ -1,130 +1,116 @@
-import React from 'react';
-import "animate.css";
+import React from "react";
+import emailjs from "emailjs-com";
+import Swal from "sweetalert2";
 
 import "./contact.scss";
+const SERVICE_ID = "service_fvjeat7";
+const TEMPLATE_ID = "template_jnlu471";
+const USER_ID = "CNggA-Bfla9h4Jykd";
+const Contact = () => {
+  const submitEmail = (e) => {
+    e.preventDefault();
+    console.log(e.target);
+    emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, e.target, USER_ID).then(
+      (result) => {
+        Swal.fire({
+          icon: "success",
+          title: "Message Sent Successfully",
+        });
+      },
+      (error) => {
+        console.log(error.text);
+        Swal.fire({
+          icon: "error",
+          title: "Ooops, something went wrong",
+          text: error.text,
+        });
+      }
+    );
+  };
 
-export default function Contact() {
-    return (
-        <div className="about_page">
-            <h2 className="main_heading animate__animated animate__slow animate__fadeInLeft">CONTACT ME <span></span><p className="shadow">CONTACT ME</p></h2>
-            <div className="contact_sec animate__animated animate__slow animate__fadeInUp animate__delay-1s">
-                <div className="contact_sec_panel">
-                    <div className="icon"><i className="fas fa-phone-alt"></i></div>
-                    <div className="text">
-                        <h4>Phone</h4>
-                        <a href="tel:+201020285787">+201020285787</a>
-                    </div>
-                </div>
-                <div className="contact_sec_panel">
-                    <div className="icon"><i className="far fa-envelope"></i></div>
-                    <div className="text">
-                        <h4>Email</h4>
-                        <a href = "mailto: shadyagmy@yahoo.com">shadyagmy@yahoo.com</a>
-                        <a href = "mailto: shadyalonsoo@gmail.com">shadyalonsoo@gmail.com</a>
-                    </div>
-                </div>
-                <div className="contact_sec_panel">
-                    <div className="icon"><i className="fas fa-map-marker-alt"></i></div>
-                    <div className="text">
-                        <h4>Address</h4>
-                       <p>6 Horeya Square, Maadi, Egypt</p>
-                    </div>
-                </div>
+  return (
+    <div className="about_page">
+      <h2 className="main_heading animate__animated animate__slow animate__fadeInLeft">
+        CONTACT ME <span></span>
+        <p className="shadow">CONTACT ME</p>
+      </h2>
+      <div className="contact">
+        <div className="contact_info animate__animated animate__slow animate__fadeInUp animate__delay-1s">
+          <div className="contact_info_panel">
+            <div className="icon">
+              <i className="fas fa-phone-alt"></i>
             </div>
+            <div className="text">
+              <h4>Phone</h4>
+              <a href="tel:+201020285787">+201020285787</a>
+            </div>
+          </div>
+          <div className="contact_info_panel">
+            <div className="icon">
+              <i className="far fa-envelope"></i>
+            </div>
+            <div className="text">
+              <h4>Email</h4>
+              <a href="mailto: shadyagmy@yahoo.com">shadyagmy@yahoo.com</a>
+              <a href="mailto: shadyalonsoo@gmail.com">shadyalonsoo@gmail.com</a>
+            </div>
+          </div>
+          <div className="contact_info_panel">
+            <div className="icon">
+              <i className="fas fa-map-marker-alt"></i>
+            </div>
+            <div className="text">
+              <h4>Address</h4>
+              <p>6 Horeya Square, Maadi, Egypt</p>
+            </div>
+          </div>
         </div>
-    )
-}
+        <div className="contact_form ">
+          <p>Get In Touch</p>
+          <form id="contact-form" onSubmit={submitEmail}>
+            <div className="input_group">
+              <label htmlFor="name">Enter your name*</label>
+              <input id="name" name="name" type="text" className="form-control" required />
+            </div>
 
-// import React, { Component } from 'react';
-// import axios from 'axios';
+            <div className="input_group">
+              <label htmlFor="email">Enter your email*</label>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                className="form-control"
+                aria-describedby="emailHelp"
+                required
+              />
+            </div>
 
-// import "./contact.scss";
+            <div className="input_group">
+              <label htmlFor="subject">Enter your subject*</label>
+              <input id="subject" name="subject" type="text" className="form-control" required />
+            </div>
 
-// class Contact extends Component {
+            <div className="input_group">
+              <label htmlFor="message">Enter your Message*</label>
+              <textarea
+                name="message"
+                id="message"
+                className="form-control"
+                rows="1"
+                required
+              />
+            </div>
 
-//     state = {
-//         name: '',
-//         email: '',
-//         subject:'',
-//         message: ''
-//       }
+            <div className="input_group">
+              <button type="submit" className="primary-btn submit">
+                Send
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  );
+};
 
-
-//     submitEmail =(e) => {
-//         e.preventDefault();
-//         console.log("submited")
-        
-//         axios.post("/", {...this.state})
-//         .then((response)=>{
-//               alert("Message Sent."); 
-//               this.resetForm()
-//         }).catch(error => {
-//             console.error('There was an error!', error);
-//         });
-//     }
-
-//         resetForm =() =>  {
-//                 this.setState({name: '', email: '',subject:'', message: ''})
-//         }
-
-//         chnageHandler = (e) => {
-//             this.setState({[e.target.id] : e.target.value})
-//         }
-
-
-//     render() {
-//         console.log(this.state)
-//         return (
-//             <div className="about_page">
-//                 <h2 className="main_heading">CONTACT ME <span></span><p className="shadow">CONTACT ME</p></h2>
-//                 <div className="section-form contact_sec">
-//                     <p>Get In Touch</p>
-//                     <form id="contact-form" onSubmit={this.submitEmail} 
-//                         method="POST">
-    
-//                         <div className="input_group">
-//                             <label htmlFor="name">Enter your name*</label>
-//                             <input   id="name" type="text" 
-//                                 className="form-control" required value={this.state.name} 
-//                                 onChange={this.chnageHandler}/>
-//                         </div>
-                        
-//                         <div className="input_group">
-//                             <label htmlFor="email">Enter your email*</label>
-//                             <input   id="email" type="email"
-//                                 className="form-control" aria-describedby="emailHelp"
-//                                 required value={this.state.email} onChange=
-//                                 {this.chnageHandler}/>
-//                         </div>
-    
-//                         <div className="input_group">
-//                             <label htmlFor="subject">Enter your subject*</label>
-//                             <input   id="subject" type="text"
-//                                 className="form-control" required value={this.state.subject}
-//                                 onChange={this.chnageHandler}/>
-//                         </div>
-    
-//                         <div className="input_group">
-//                             <label htmlFor="message">Enter your Message*</label>
-//                             <textarea placeholder = "Message"  id="message" 
-//                                 className="form-control" rows="1" 
-//                                 required value={this.state.message}
-//                                 onChange= {this.chnageHandler}/>
-//                         </div>
-    
-//                         <div className="input_group">
-//                         <   button type="submit" className="primary-btn submit">Submit</button>
-//                         </div>
-    
-//                     </form>
-//                 </div>
-                
-//             </div>
-//         )
-//     }
-// }
-
-// export default Contact;
-
-
-
+export default Contact;
