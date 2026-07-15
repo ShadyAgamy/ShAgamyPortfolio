@@ -22,17 +22,10 @@ export default function Portfolio() {
     return type === "jquery";
   });
 
-  const htmlProjects = data.filter(({ type }) => {
-    return type === "html";
-  });
-
-
-
   //   const currentPageData = data
   // .slice(offset, offset + PER_PAGE)
   const renderProjects = (projects) => {
     return projects.map(({ id, name, url, desc, imgSrc }) => {
-      console.log(imgSrc)
       return (
         <div key={id} className="port_item">
           <div
@@ -58,7 +51,6 @@ export default function Portfolio() {
 
   const react =  renderProjects(reactProjects);
   const jquery =   renderProjects(jqueryProjects);
-  const html =   renderProjects(htmlProjects);
 
   return (
     <div className="about_page portfolio_page">
@@ -77,10 +69,6 @@ export default function Portfolio() {
               Jquery Projects
               <i className="fab fa-js"></i>
             </Tab>
-            <Tab>
-              UI Projects
-              <i className="fab fa-html5"></i>
-            </Tab>
           </TabList>
 
           <TabPanel>
@@ -91,11 +79,6 @@ export default function Portfolio() {
           <TabPanel>
             <div className="port_items">
               {jquery}
-            </div>
-          </TabPanel>
-          <TabPanel>
-            <div className="port_items">
-              {html}
             </div>
           </TabPanel>
         </Tabs>

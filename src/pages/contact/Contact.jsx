@@ -56,8 +56,22 @@ const Contact = () => {
             </div>
             <div className="text">
               <h4>Email</h4>
-              <a href="mailto: shadyagmy@yahoo.com">shadyagmy@yahoo.com</a>
-              <a href="mailto: shadyalonsoo@gmail.com">shadyalonsoo@gmail.com</a>
+              <a href="mailto:shadyalonsoo@gmail.com">shadyalonsoo@gmail.com</a>
+            </div>
+          </div>
+          <div className="contact_info_panel animate__animated animate__slow animate__fadeInUp animate__delay-2s">
+            <div className="icon">
+              <i className="fab fa-linkedin-in"></i>
+            </div>
+            <div className="text">
+              <h4>LinkedIn</h4>
+              <a
+                href="https://www.linkedin.com/in/shady-agamy-746a59147/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                shady-agamy
+              </a>
             </div>
           </div>
           <div className="contact_info_panel animate__animated animate__slow animate__fadeInUp animate__delay-2s">
@@ -65,8 +79,8 @@ const Contact = () => {
               <i className="fas fa-map-marker-alt"></i>
             </div>
             <div className="text">
-              <h4>Address</h4>
-              <p>6 Horeya Square, Maadi, Egypt</p>
+              <h4>Location</h4>
+              <p>Cairo, Egypt</p>
             </div>
           </div>
         </div>

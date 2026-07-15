@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 
 import './menu.scss';
 
-import mainLogo from '../../assets/avatar.svg';
+import mainLogo from '../../assets/profile.jpg';
 
 export default function Menu({ menuOpen, toggleMenu }) {
   return (
@@ -14,7 +14,7 @@ export default function Menu({ menuOpen, toggleMenu }) {
         </span>
       </div>
       <div className="avatar_cont">
-        <img src={mainLogo} alt="" />
+        <img src={mainLogo} alt="Shady Agamy" />
       </div>
       <div className="menu_cont_links">
         <ul>

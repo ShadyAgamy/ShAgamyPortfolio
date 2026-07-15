@@ -82,8 +82,9 @@ export default function HomePage() {
           Hi, I am <span className="co_main">Shady Agamy</span>
         </h1>
         <p className="animate__animated animate__slow animate__fadeInUp animate__delay-2s">
-          I am a Front-End web developer. I can provide clean code and pixel perfect design. I also
-          make website more &#38; more interactive with web animations.
+          I'm a frontend developer with around six years of experience building React &#38;
+          TypeScript web applications. I focus on shipping clean, reliable features for real
+          products &#8212; from UI to state management.
         </p>
         <div className="links animate__animated animate__slow animate__fadeInUp animate__delay-4s	 ">
           <a

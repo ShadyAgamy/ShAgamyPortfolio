@@ -1,6 +1,5 @@
 import React from "react";
 
-import ScrollAnimation from "react-animate-on-scroll";
 import "./about.scss";
 import mainLogo from "../../assets/info.svg";
 
@@ -21,33 +20,34 @@ export default function About() {
             I am <span className="co_main">Shady Agamy</span>
           </h3>
           <p className=" animate__animated animate__slow animate__fadeInUp animate__delay-3s">
-            I'm a self-taught developer. Four years ago I started front-end web development as a
-            self-study course and learned some new technology skills. I can provide clean code and
-            pixel-perfect design. I also make websites more &#38; more interactive with web
-            animations. I also value lifelong learning and continue to learn from eBooks and video
-            courses from top teaching resources.
+            I'm a frontend developer with around six years of professional experience building web
+            applications. For the past few years at PlanRadar &#8212; a B2B construction SaaS used
+            across Europe &#8212; I've worked in a large-scale React and TypeScript codebase, owning
+            features end to end across ticket management, document management, approval workflows,
+            and advanced filtering. I care about clean, maintainable code, solid UI, and shipping
+            features that hold up in production &#8212; and I keep learning as the stack evolves.
           </p>
           <ul className="info animate__animated animate__slow animate__fadeInUp animate__delay-4s">
             <li>
               <span>Full Name</span>: Shady Agamy
             </li>
             <li>
-              <span>Nationality</span>: egyption
+              <span>Nationality</span>: Egyptian
             </li>
             <li>
-              <span>Languages</span>: arabic, english
+              <span>Languages</span>: Arabic, English
             </li>
             <li>
-              <span>Address</span>: 6 Horeya square, maadi, egypt
+              <span>Location</span>: Cairo, Egypt
             </li>
             <li>
-              <span>Freelance</span>: Available
+              <span>Availability</span>: Open to remote opportunities
             </li>
           </ul>
           {/* <ScrollAnimation animateIn="animate__fadeInUp" duration={1} delay={2500}  offset={50}> */}
             <a
               className="custom_btn  animate__animated animate__slow animate__fadeInUp animate__delay-5s"
-              href="Shadi_Agamy_-_Front_end_Developer.pdf"
+              href="Shady_Agamy_CV.pdf"
               target="_blank"
               download
             >

@@ -4,8 +4,6 @@ import "./resume.scss";
 import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
 
-import ProgressBar from "react-animated-progress-bar";
-
 const practicles_config = {
   params: {
     background: {
@@ -93,59 +91,100 @@ const particlesInit = async (main) => {
 class Resume extends Component {
   state = {
     skills: [
-      { id: "html5", name: "html5", percentage: "90" },
-      { id: "CSS3", name: "CSS3", percentage: "90" },
-      { id: "Javascript", name: "Javascript", percentage: "80" },
-      { id: "jQuery", name: "jQuery", percentage: "90" },
-      { id: "ReactJS", name: "ReactJS", percentage: "80" },
-      { id: "Redux", name: "Redux", percentage: "80" },
+      {
+        id: "languages",
+        category: "Languages",
+        items: ["JavaScript (ES6+)", "TypeScript", "HTML5", "CSS3 / SCSS"],
+      },
+      {
+        id: "frameworks",
+        category: "Frameworks & Libraries",
+        items: ["React", "Redux / Redux-Saga", "Zustand", "React Router"],
+      },
+      {
+        id: "styling",
+        category: "Styling",
+        items: ["Tailwind CSS", "SCSS", "Responsive Design"],
+      },
+      {
+        id: "testing",
+        category: "Testing",
+        items: ["Vitest", "Playwright (E2E)"],
+      },
+      {
+        id: "tools",
+        category: "Tools & Practices",
+        items: ["Git", "Vite", "REST APIs", "WebSockets", "Code Review", "Agile"],
+      },
     ],
     workExperience: [
       {
         id: 1,
-        role: "Front end developer ",
-        company: "expand cart",
-        period: "07/2020 - 01/2022",
-        companyLink: "https://expandcart.com/en/",
+        role: "Frontend Developer",
+        company: "PlanRadar",
+        period: "Jul 2022 - Present",
+        companyLink: "https://www.planradar.com/",
+        desc: [
+          "Build and maintain features in a large-scale React + TypeScript SPA for a B2B construction platform used across Europe.",
+          "Delivered a reusable filtering system adopted across many list views, including URL-persisted filter state.",
+          "Shipped work across major product areas: ticket management, document management (file preview & versioning), and approval workflows with real-time updates over WebSockets.",
+        ],
       },
       {
         id: 2,
-        role: "UI developer",
-        company: "Road9 media",
-        period: "06/2019 - 07/2020",
-        companyLink: "https://road9media.com/",
+        role: "Web User Interface Developer",
+        company: "ExpandCart",
+        period: "Sep 2020 - Jan 2022",
+        companyLink: "https://expandcart.com/en/",
+        desc: [
+          "Converted existing HTML templates into server-side templates using the Twig templating engine.",
+          "Maintained and fixed UI issues across the e-commerce platform's storefront templates.",
+        ],
       },
       {
         id: 3,
-        role: "UI developer",
-        company: "freelance projects",
-        period: "02/2019 - 06/2019",
+        role: "UI Developer",
+        company: "Road9 Media",
+        period: "Jul 2019 - Aug 2020",
+        companyLink: "https://road9media.com/",
+        desc: [
+          "Turned UX/UI designs into responsive, cross-browser websites.",
+        ],
       },
     ],
   };
 
   render() {
-    const mappedSkills = this.state.skills.map(({ id, name, percentage }) => {
+    const mappedSkills = this.state.skills.map(({ id, category, items }) => {
       return (
-        <div key={id} className="skill">
-          <div className="skill_name">{name}</div>
-          <ProgressBar
-            width="100%"
-            height="8px"
-            rect
-            fontColor="gray"
-            percentage={percentage}
-            rectPadding="2px"
-            rectBorderRadius="15px"
-            trackPathColor="rgba(111, 34, 50, .5)"
-            bgColor="#C3083F"
-          />
+        <div key={id} className="skill_group" style={{ marginBottom: "1.6rem" }}>
+          <h4 className="co_main" style={{ marginBottom: "0.7rem" }}>
+            {category}
+          </h4>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: "0.5rem" }}>
+            {items.map((item) => (
+              <span
+                key={item}
+                style={{
+                  border: "1px solid #C3083F",
+                  borderRadius: "20px",
+                  padding: "0.35rem 0.9rem",
+                  fontSize: "0.9rem",
+                  color: "#fff",
+                  backgroundColor: "rgba(195, 8, 63, 0.15)",
+                  whiteSpace: "nowrap",
+                }}
+              >
+                {item}
+              </span>
+            ))}
+          </div>
         </div>
       );
     });
 
     const mappedWorkExperience = this.state.workExperience.map(
-      ({ id, period, role, company, companyLink }) => {
+      ({ id, period, role, company, companyLink, desc }) => {
         return (
           <div key={id} className="work_ex">
             <div className="work_ex--period">{period}</div>
@@ -154,6 +193,22 @@ class Resume extends Component {
               <a href={`${companyLink}`} className="company " target="_blank">
                 {company}
               </a>
+              {desc && (
+                <ul
+                  className="work_ex--desc"
+                  style={{
+                    marginTop: "0.6rem",
+                    paddingLeft: "1.1rem",
+                    lineHeight: 1.5,
+                  }}
+                >
+                  {desc.map((line, i) => (
+                    <li key={i} style={{ marginBottom: "0.35rem" }}>
+                      {line}
+                    </li>
+                  ))}
+                </ul>
+              )}
             </div>
           </div>
         );
