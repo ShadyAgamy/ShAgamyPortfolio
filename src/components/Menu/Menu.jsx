@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 
 import './menu.scss';
 
-import mainLogo from '../../assets/profile.jpg';
+import mainLogo from '../../assets/profile.png';
 
 export default function Menu({ menuOpen, toggleMenu }) {
   return (

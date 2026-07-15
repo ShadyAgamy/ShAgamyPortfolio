@@ -155,9 +155,13 @@ class Resume extends Component {
   };
 
   render() {
-    const mappedSkills = this.state.skills.map(({ id, category, items }) => {
+    const mappedSkills = this.state.skills.map(({ id, category, items }, idx) => {
       return (
-        <div key={id} className="skill_group" style={{ marginBottom: "1.6rem" }}>
+        <div
+          key={id}
+          className="skill_group animate__animated animate__fadeInUp"
+          style={{ marginBottom: "1.6rem", animationDelay: `${idx * 0.12}s` }}
+        >
           <h4 className="co_main" style={{ marginBottom: "0.7rem" }}>
             {category}
           </h4>
@@ -168,8 +172,8 @@ class Resume extends Component {
                 style={{
                   border: "1px solid #C3083F",
                   borderRadius: "20px",
-                  padding: "0.35rem 0.9rem",
-                  fontSize: "0.9rem",
+                  padding: "0.4rem 1rem",
+                  fontSize: "1rem",
                   color: "#fff",
                   backgroundColor: "rgba(195, 8, 63, 0.15)",
                   whiteSpace: "nowrap",
@@ -199,7 +203,8 @@ class Resume extends Component {
                   style={{
                     marginTop: "0.6rem",
                     paddingLeft: "1.1rem",
-                    lineHeight: 1.5,
+                    fontSize: "1.05rem",
+                    lineHeight: 1.6,
                   }}
                 >
                   {desc.map((line, i) => (
