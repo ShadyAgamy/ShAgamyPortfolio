@@ -2,18 +2,14 @@ import React, { useState } from "react";
 import "animate.css";
 import "./portfolio.scss";
 
-
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 
 import portfolioData from "./portfolio.data";
 
 export default function Portfolio() {
-  //   const [currentPage, setCurrentPage] = useState(0);
   const [data] = useState(portfolioData);
 
-  //   const PER_PAGE = 6;
-  //   const offset = currentPage * PER_PAGE;
   const reactProjects = data.filter(({ type }) => {
     return type === "react";
   });
@@ -22,8 +18,6 @@ export default function Portfolio() {
     return type === "jquery";
   });
 
-  //   const currentPageData = data
-  // .slice(offset, offset + PER_PAGE)
   const renderProjects = (projects) => {
     return projects.map(({ id, name, url, desc, imgSrc }) => {
       return (
@@ -49,8 +43,8 @@ export default function Portfolio() {
     });
   };
 
-  const react =  renderProjects(reactProjects);
-  const jquery =   renderProjects(jqueryProjects);
+  const react = renderProjects(reactProjects);
+  const jquery = renderProjects(jqueryProjects);
 
   return (
     <div className="about_page portfolio_page">
@@ -72,28 +66,13 @@ export default function Portfolio() {
           </TabList>
 
           <TabPanel>
-            <div className="port_items">
-              {react}
-            </div>
+            <div className="port_items">{react}</div>
           </TabPanel>
           <TabPanel>
-            <div className="port_items">
-              {jquery}
-            </div>
+            <div className="port_items">{jquery}</div>
           </TabPanel>
         </Tabs>
       </div>
-      {/* <ReactPaginate
-        previousLabel={chevLeft}
-        nextLabel={chevRight}
-        pageCount={pageCount}
-        onPageChange={handlePageClick}
-        containerClassName={"pagination"}
-        previousLinkClassName={"pagination__link"}
-        nextLinkClassName={"pagination__link"}
-        disabledClassName={"pagination__link--disabled"}
-        activeClassName={"pagination__link--active"}
-      /> */}
     </div>
   );
 }
