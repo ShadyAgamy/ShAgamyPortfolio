@@ -1,112 +1,160 @@
 .menu_cont {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 18rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid rgba(#4e4e50, 0.5);
+  transition: all 0.4s cubic-bezier(0.21, 0.1, 0.04, 0.99);
+  z-index: 9999;
+  .avatar_cont {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 0;
+    border-bottom: 1px solid rgba(#4e4e50, 0.5);
+    img {
+      width: 10rem;
+      height: 10rem;
+      max-width: 60%;
+      aspect-ratio: 1;
+      flex: 0 0 auto;
+      border-radius: 50%;
+      border: 6px solid rgba(#4e4e50, 0.5);
+      object-fit: cover;
+      filter: grayscale(0.5);
+      -webkit-filter: grayscale(0.5);
+      /* Safari 6.0 - 9.0 */
+    }
+    @media screen and (max-height: 700px) {
+      padding: 1.2rem 0;
+      img {
+        width: 7rem;
+        height: 7rem;
+      }
+    }
+  }
+  &_links {
+    flex: 1 1 auto;
+    overflow-y: auto;
+    ul {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      padding-top: 2rem;
+      li {
+        display: block;
+        width: 100%;
+      }
+      a {
+        display: block;
+        width: 100%;
+        font-size: 1.1rem;
+        text-align: center;
+        padding: 0.6rem;
+        position: relative;
+        // transition: all .6s ease;
+        z-index: 1;
+        &:before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+          width: 0;
+          background-color: rgba(#c3083f, 0.1);
+          transition: all 0.6s ease;
+          z-index: -1;
+        }
+        &:hover {
+          color: rgba(#fff, 0.5);
+          font-weight: 500;
+          &::before {
+            width: 100%;
+            background-color: rgba(#c3083f, 0.2);
+          }
+        }
+        &.active {
+          color: #b7b7b7;
+          font-weight: 500;
+          &::before {
+            width: 100%;
+            background-color: rgba(#c3083f, 0.5);
+          }
+        }
+      }
+    }
+  }
+  .menu_toggle {
+    position: absolute;
+    top: 37px;
+    right: -61px;
+    z-index: 2;
+    display: none;
+    @media screen and (max-width: 900px) {
+      display: block;
+    }
+    span {
+      background-color: #1a1a1c;
+      padding: 0.8rem 1.2rem;
+      border: 1px solid #343436;
+      border-left-color: transparent;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      i {
+        font-size: 1.8rem;
+      }
+    }
+  }
+  &.close {
+    left: -18rem;
+  }
+  // @media screen and (max-width: 900px) {
+  //     left: -18rem;
+  //  }
+}
+
+// Lock the page behind the open menu. Reads the menu's own open/close class,
+// so no JS is involved. Scoped to the same breakpoint as the overlay - above
+// it the menu is always open and the page must stay scrollable.
+// Note: this couples to .menu_cont.open - renaming that class silently
+// disables the lock.
+@media screen and (max-width: 900px) {
+  body:has(.menu_cont.open) {
+    overflow: hidden;
+  }
+}
+
+// Backdrop behind the slide-out menu. Only exists on the breakpoint where
+// the menu can actually be closed - on wide screens the menu is always open.
+.menu_overlay {
+  display: none;
+  @media screen and (max-width: 900px) {
+    display: block;
     position: fixed;
     top: 0;
     left: 0;
-    width: 18rem;
+    width: 100%;
     height: 100%;
-    display: flex;
-    flex-direction: column;
-    border-right: 1px solid rgba(#4E4E50, .5);
-    transition: all .4s cubic-bezier(0.21, 0.1, 0.04, 0.99);
-    z-index: 9999;
-    .avatar_cont {
-        height: 40%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 2rem 0;
-        border-bottom: 1px solid rgba(#4E4E50, .5);
-        img {
-            width: 13rem;
-            height: 13rem;
-            border-radius: 50%;
-            border: 6px solid rgba(#4E4E50, .5);
-            object-fit: cover;
-            filter: grayscale(.5);
-            -webkit-filter: grayscale(.5);
-            /* Safari 6.0 - 9.0 */
-        }
-    }
-    &_links {
-        height: 60%;
-        flex: 1 1 100%;
-        ul {
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            margin-top: -2rem;
-            li {
-                display: block;
-                width: 100%;
-            }
-            a {
-                display: block;
-                width: 100%;
-                font-size: 1.1rem;
-                text-align: center;
-                padding: .6rem;
-                position: relative;
-                // transition: all .6s ease;
-                z-index: 1;
-                &:before {
-                    content: "";
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    height: 100%;
-                    width: 0;
-                    background-color: rgba(#C3083F, .1);
-                    transition: all .6s ease;
-                    z-index: -1;
-                }
-                &:hover {
-                    color: rgba(#fff, .5);
-                    font-weight: 500;
-                    &::before {
-                        width: 100%;
-                        background-color: rgba(#C3083F, .2);
-                    }
-                }
-                &.active {
-                    color: #b7b7b7;
-                    font-weight: 500;
-                    &::before {
-                        width: 100%;
-                        background-color: rgba(#C3083F, .5);
-                    }
-                }
-            }
-        }
-    }
-    .menu_toggle {
-        position: absolute;
-        top: 37px;
-        right: -61px;
-        z-index: 2;
-        display: none;
-        @media screen and (max-width: 900px) {
-            display: block;
-        }
-        span {
-            background-color: #1A1A1C;
-            padding: .8rem 1.2rem;
-            border: 1px solid #343436;
-            border-left-color: transparent;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            i {
-                font-size: 1.8rem;
-            }
-        }
-    }
+    background-color: rgba(0, 0, 0, 0.6);
+    // Sits above the page content (z-index 8) but below the menu (9999).
+    z-index: 9998;
+    cursor: pointer;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
     &.close {
-        left: -18rem;
+      opacity: 0;
+      // visibility keeps the invisible overlay from swallowing clicks.
+      visibility: hidden;
     }
-    // @media screen and (max-width: 900px) {
-    //     left: -18rem;
-    //  }
+    &.open {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
 }

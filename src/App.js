@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { Switch, Route } from "react-router-dom";
 
 import Menu from "./components/Menu/Menu";
@@ -12,50 +12,37 @@ import "animate.css/animate.min.css";
 import "./reset.scss";
 import "./App.scss";
 
-class App extends React.Component {
-  state = {
-    menuOpen: false,
-  };
+const WIDE_SCREEN = 900;
 
-  componentDidMount = () => {
-    window.addEventListener("resize", this.resize);
-    this.resize();
-  };
+export default function App() {
+  const [menuOpen, setMenuOpen] = useState(
+    () => window.innerWidth >= WIDE_SCREEN
+  );
 
-  resize = () => {
-    this.setState({
-      menuOpen: window.innerWidth >= 900,
-    });
-  };
+  useEffect(() => {
+    const resize = () => setMenuOpen(window.innerWidth >= WIDE_SCREEN);
+    window.addEventListener("resize", resize);
+    return () => window.removeEventListener("resize", resize);
+  }, []);
 
-  componentWillUnmount = () => {
-    window.removeEventListener("resize", this.resize);
-  };
-
-  toggleMenu = () => {
-    if (window.innerWidth <= 900) {
-      this.setState({
-        menuOpen: !this.state.menuOpen,
-      });
+  const toggleMenu = useCallback(() => {
+    if (window.innerWidth <= WIDE_SCREEN) {
+      setMenuOpen((open) => !open);
     }
-  };
+  }, []);
 
-  render() {
-    return (
-      <div className="page_container">
-        <Menu menuOpen={this.state.menuOpen} toggleMenu={() => this.toggleMenu()} />{" "}
-        <div className="width_80">
-          <Switch>
-            <Route exact path="/" component={HomePage} />{" "}
-            <Route exact path="/about" component={About} />{" "}
-            <Route exact path="/resume" component={Resume} />{" "}
-            <Route exact path="/portfolio" component={Portfolio} />{" "}
-            <Route exact path="/contact" component={Contact} />{" "}
-          </Switch>{" "}
-        </div>{" "}
+  return (
+    <div className="page_container">
+      <Menu menuOpen={menuOpen} toggleMenu={toggleMenu} />
+      <div className="width_80">
+        <Switch>
+          <Route exact path="/" component={HomePage} />
+          <Route exact path="/about" component={About} />
+          <Route exact path="/resume" component={Resume} />
+          <Route exact path="/portfolio" component={Portfolio} />
+          <Route exact path="/contact" component={Contact} />
+        </Switch>
       </div>
-    );
-  }
+    </div>
+  );
 }
-
-export default App;
