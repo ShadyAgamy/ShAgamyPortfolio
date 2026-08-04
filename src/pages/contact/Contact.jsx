@@ -1,36 +1,49 @@
-import React from "react";
-import emailjs from "emailjs-com";
-import Swal from 'sweetalert2/dist/sweetalert2.js';
+import React, { useState } from "react";
+import emailjs from "@emailjs/browser";
+import Swal from "sweetalert2/dist/sweetalert2.js";
 
 import "./contact.scss";
+
 const SERVICE_ID = "service_fvjeat7";
 const TEMPLATE_ID = "template_jnlu471";
-const USER_ID = "CNggA-Bfla9h4Jykd";
+const PUBLIC_KEY = "CNggA-Bfla9h4Jykd";
+const CONTACT_EMAIL = "shadyalonsoo@gmail.com";
+
 const Contact = () => {
+  const [sending, setSending] = useState(false);
 
-
-  const submitEmail =  (e) => {
+  const submitEmail = (e) => {
     e.preventDefault();
-    e.persist();
-    emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, e.target, USER_ID).then(
-      (result) => {
-        e.target.reset();
-         Swal.fire({
-          icon: "success",
-          title: "Message Sent Successfully",
-        }) 
-        
-      },
-      (error) => {
-        console.log(error.text);
-        Swal.fire({
-          icon: "error",
-          title: "Ooops, something went wrong",
-          text: error.text,
-        });
-      }
-    );
-   
+    const form = e.target;
+
+    if (sending) return;
+    setSending(true);
+
+    emailjs
+      .sendForm(SERVICE_ID, TEMPLATE_ID, form, PUBLIC_KEY)
+      .then(
+        () => {
+          form.reset();
+          Swal.fire({
+            icon: "success",
+            title: "Message Sent Successfully",
+          });
+        },
+        (error) => {
+          // The real reason is only useful to me - visitors get a way through
+          // instead of a raw API error. The mail service can fail entirely
+          // (expired token, quota), so always offer the direct address.
+          console.error("EmailJS sendForm failed:", error);
+          Swal.fire({
+            icon: "error",
+            title: "Message could not be sent",
+            html:
+              "Something went wrong on our side. Please email me directly at " +
+              `<a href="mailto:${CONTACT_EMAIL}">${CONTACT_EMAIL}</a>.`,
+          });
+        }
+      )
+      .finally(() => setSending(false));
   };
 
   return (
@@ -89,7 +102,13 @@ const Contact = () => {
           <form id="contact-form" onSubmit={submitEmail}>
             <div className="input_group">
               <label htmlFor="name">Enter your name*</label>
-              <input id="name" name="name" type="text" className="form-control" required />
+              <input
+                id="name"
+                name="name"
+                type="text"
+                className="form-control"
+                required
+              />
             </div>
 
             <div className="input_group">
@@ -106,7 +125,13 @@ const Contact = () => {
 
             <div className="input_group">
               <label htmlFor="subject">Enter your subject*</label>
-              <input id="subject" name="subject" type="text" className="form-control" required />
+              <input
+                id="subject"
+                name="subject"
+                type="text"
+                className="form-control"
+                required
+              />
             </div>
 
             <div className="input_group">
@@ -121,8 +146,8 @@ const Contact = () => {
             </div>
 
             <div className="input_group">
-              <button type="submit" className="blue_btn">
-                Send
+              <button type="submit" className="blue_btn" disabled={sending}>
+                {sending ? "Sending..." : "Send"}
               </button>
             </div>
           </form>
