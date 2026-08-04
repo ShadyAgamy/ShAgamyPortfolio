@@ -1,66 +1,9 @@
 .portfolio_page {
-    .react-tabs {
-        margin-top: 5rem;
-        .react-tabs__tab-list {
-            border: none;
-            .react-tabs__tab {
-                &:not(:last-of-type) {
-                    margin-right: 1.5rem;
-                    margin-bottom: 1rem;
-                }
-                padding: 9px 18px;
-                font-weight: 500;
-                font-size: 1.1rem;
-                border: 1px solid #6F112E;
-                padding: 9px 18px;
-                transition: all .3s cubic-bezier(0.075, 0.82, 0.165, 1);
-                &--selected,
-                &:hover {
-                    border-radius: 5px 5px 0 0;
-                    color: #eee;
-                    background: #6F112E;
-                    border-color: #6F112E;
-                    transform: scale(1.1);
-                    .fa-react {
-                        color: #4FB7D3;
-                    }
-                    .fa-js {
-                        color: #EAD41C;
-                    }
-                    .fa-html5 {
-                        color: #D84B25;
-                    }
-                }
-                &:focus:after {
-                    display: none;
-                }
-                i {
-                    color: currentColor;
-                    margin-left: 8px;
-                    font-size: 16px;
-                    margin-top: 1px;
-                }
-            }
-        }
-        .react-tabs__tab-panel {
-            display: block !important;
-            visibility: hidden;
-            position: relative;
-            transform: translate(0, 5rem);
-            opacity: 0;
-            transition: all .8s cubic-bezier(0.075, 0.82, 0.165, 1);
-            &--selected {
-                visibility: visible;
-                opacity: 1;
-                transform: translate(0, 0);
-            }
-        }
-    }
     .port_items {
         min-height: 600px;
         display: flex;
         flex-wrap: wrap;
-        margin-top: 2.5rem;
+        margin-top: 5rem;
         @media screen and (max-width: 1200px) {
             justify-content: space-between;
         }
@@ -153,34 +96,5 @@
                 line-height: 1.3rem;
             }
         }
-    }
-    .pagination {
-        display: flex;
-        list-style: none;
-        cursor: pointer;
-    }
-    .pagination {
-        margin-top: 1rem;
-        a {
-            margin-right: 5px;
-            display: inline-block;
-            border: 1px solid #6F112E;
-            height: 40px;
-            width: 40px;
-            text-align: center;
-            color: #B40639;
-            line-height: 38px;
-        }
-    }
-    .pagination__link {
-        font-weight: bold;
-    }
-    .pagination__link--active a {
-        color: #fff;
-        background: #6F112E;
-        border-color: #6F112E;
-    }
-    .pagination__link--disabled a {
-        display: none;
     }
 }
