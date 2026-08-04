@@ -1,82 +1,11 @@
 import React from "react";
-import Particles from "react-tsparticles";
-import { loadFull } from "tsparticles";
 import "animate.css";
 
 import "./homepage.scss";
 
-const practicles_config = {
-  params: {
-    background: {
-      color: {
-        value: "transparent",
-      },
-    },
-    fpsLimit: 120,
-    interactivity: {
-      events: {
-        onHover: {
-          enable: true,
-          mode: "repulse",
-        },
-      },
-      modes: {
-        push: {
-          quantity: 120,
-        },
-        repulse: {
-          distance: 100,
-          duration: 0.4,
-        },
-      },
-    },
-    particles: {
-      color: {
-        value: "#aaaaaa",
-      },
-
-      collisions: {
-        enable: true,
-      },
-      move: {
-        direction: "none",
-        enable: true,
-        outModes: {
-          default: "bounce",
-        },
-        random: false,
-        speed: 2,
-        straight: false,
-      },
-      number: {
-        density: {
-          enable: true,
-          area: 600,
-        },
-        value: 30,
-      },
-      opacity: {
-        value: 0.5,
-      },
-      shape: {
-        type: "circle",
-      },
-      size: {
-        value: { min: 1, max: 5 },
-      },
-    },
-    detectRetina: true,
-  },
-};
-
 export default function HomePage() {
-  const particlesInit = async (main) => {
-    await loadFull(main);
-  };
-
   return (
-    <div className="homepage" style={practicles_config.style}>
-      <Particles id="tsparticles" init={particlesInit} options={practicles_config.params} />
+    <div className="homepage">
       <div className="homepage_section">
         <h1 className="animate__animated animate__slow animate__fadeInUp">
           Hi, I am <span className="co_main">Shady Agamy</span>
@@ -86,7 +15,7 @@ export default function HomePage() {
           TypeScript web applications. I focus on shipping clean, reliable features for real
           products &#8212; from UI to state management.
         </p>
-        <div className="links animate__animated animate__slow animate__fadeInUp animate__delay-4s	 ">
+        <div className="links animate__animated animate__slow animate__fadeInUp animate__delay-4s">
           <a
             href="https://www.linkedin.com/in/shady-agamy-746a59147/"
             target="_blank"

@@ -1,92 +1,6 @@
 /* eslint-disable react/jsx-no-target-blank */
 import React, { Component } from "react";
 import "./resume.scss";
-import Particles from "react-tsparticles";
-import { loadFull } from "tsparticles";
-
-const practicles_config = {
-  params: {
-    background: {
-      color: {
-        value: "transparent",
-      },
-    },
-    fpsLimit: 120,
-    interactivity: {
-      events: {
-        onHover: {
-          enable: false,
-        },
-      },
-    },
-    particles: {
-      collisions: {
-        enable: false,
-      },
-      move: {
-        direction: "none",
-        enable: true,
-        outModes: {
-          default: "bounce",
-        },
-        random: true,
-        speed: 1,
-        straight: false,
-      },
-      number: {
-        density: {
-          enable: true,
-          area: 3000,
-        },
-        value: 40,
-      },
-      opacity: {
-        value: 0.3,
-      },
-      shape: {
-        type: ["image"],
-        image: [
-          {
-            src: "./imgs/langImgs/react.png",
-            height: 50,
-          },
-          {
-            src: "./imgs/langImgs/html.png",
-            height: 50,
-          },
-          {
-            src: "./imgs/langImgs/css.png",
-            height: 50,
-          },
-          {
-            src: "./imgs/langImgs/js.png",
-            height: 50,
-          },
-          {
-            src: "./imgs/langImgs/gulp.png",
-            height: 50,
-          },
-          {
-            src: "./imgs/langImgs/git.png",
-            height: 50,
-          },
-          {
-            src: "./imgs/langImgs/sass.png",
-            height: 50,
-          },
-        ],
-      },
-      size: {
-        value: { min: 5, max: 10 },
-      },
-    },
-    detectRetina: true,
-  },
-};
-
-const particlesInit = async (main) => {
-  await loadFull(main);
-};
 
 class Resume extends Component {
   state = {
@@ -221,9 +135,7 @@ class Resume extends Component {
     );
 
     return (
-      <div className="about_page" style={practicles_config.style}>
-        <Particles id="tsparticles" init={particlesInit} options={practicles_config.params} />
-
+      <div className="about_page">
         <h2 className="main_heading animate__animated animate__slow animate__fadeInLeft">
           MY SKILLS <span></span>
           <p className="shadow animate__animated animate__slow animate__fadeInLeft">MY SKILLS</p>
