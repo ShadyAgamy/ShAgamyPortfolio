@@ -17,7 +17,7 @@ export const caseStudies = [
   {
     id: "shared-filters",
     title: "Shared Filter System",
-    context: "PlanRadar - B2B construction SaaS",
+    context: "PlanRadar - platform-wide",
     role: "One of the main authors. Created the state provider and the URL persistence.",
     problem:
       "Tables across the product - tickets, documents, approvals, field reports - can hold thousands " +
@@ -41,7 +41,7 @@ export const caseStudies = [
   {
     id: "approvals-sync",
     title: "Approvals Cross-View Sync",
-    context: "PlanRadar - approval workflows",
+    context: "PlanRadar - approvals module",
     role:
       "Main author. Built the shared approvals context, plus the request details view, the reviewers " +
       "panel, the approve/reject and bulk actions, and the file and ticket viewers.",
@@ -61,7 +61,7 @@ export const caseStudies = [
     result:
       "The table and the panel stay consistent regardless of where the action originates or how " +
       "requests interleave.",
-    stack: ["React", "TypeScript", "CustomEvent pub/sub"],
+    stack: ["React", "TypeScript", "CustomEvent pub/sub", "Race-condition guard"],
   },
 ];
 

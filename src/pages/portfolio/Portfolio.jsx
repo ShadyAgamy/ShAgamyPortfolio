@@ -73,8 +73,8 @@ export default function Portfolio() {
       <section className="port_section animate__animated animate__slow animate__fadeInUp animate__delay-2s">
         <h4 className="port_section_title">Case Studies</h4>
         <p className="port_section_note">
-          Production work at PlanRadar. The codebase is private, so these are written summaries
-          rather than links.
+          Production work at PlanRadar, a B2B construction SaaS used across Europe. The codebase is
+          private, so these are written summaries rather than links.
         </p>
         <div className="case_studies">
           {caseStudies.map((study) => (
