@@ -1,4 +1,4 @@
-const img = (name) => `${process.env.PUBLIC_URL}/imgs/projects/${name}`;
+const img = (name) => `${import.meta.env.BASE_URL}imgs/projects/${name}`;
 
 export const projects = [
   {
