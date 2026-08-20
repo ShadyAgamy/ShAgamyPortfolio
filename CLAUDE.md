@@ -6,6 +6,12 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 Shady Agamy's personal portfolio site. React 19 + React Router v5, built with Vite, deployed to GitHub Pages. No TypeScript.
 
+## Security
+
+- This repo is **public** on GitHub. Never commit real credentials, passwords, or private API keys — treat anything committed as permanently exposed, since deleting a file later does not remove it from git history.
+- The EmailJS service/template/public key in `Contact.jsx` are the exception: EmailJS public keys are designed to be client-side and are not secrets.
+- Before committing, scan changed files for credential-like strings (`password`, `pass:`, `api_key`, `secret`, `token`). If one is found in tracked history (not just the working tree), flag it immediately with concrete remediation steps: rotate the credential, and note that history still needs purging (e.g. `git filter-repo`) since removing the file alone leaves it in old commits.
+
 ## Commands
 
 ```
