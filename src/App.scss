@@ -18,9 +18,42 @@
     color: #b7b7b7;
 }
 
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translate3d(0, 100%, 0); }
+    to { opacity: 1; transform: translate3d(0, 0, 0); }
+}
+
+@keyframes fadeInLeft {
+    from { opacity: 0; transform: translate3d(-100%, 0, 0); }
+    to { opacity: 1; transform: translate3d(0, 0, 0); }
+}
+
 .animate__animated {
     animation-timing-function: ease;
+    animation-duration: var(--animate-duration);
+    animation-fill-mode: both;
+
+    @media (prefers-reduced-motion: reduce) {
+        animation-duration: 1ms !important;
+        animation-delay: 0s !important;
+    }
 }
+
+.animate__fadeIn { animation-name: fadeIn; }
+.animate__fadeInUp { animation-name: fadeInUp; }
+.animate__fadeInLeft { animation-name: fadeInLeft; }
+
+.animate__slow { animation-duration: calc(var(--animate-duration) * 2); }
+
+.animate__delay-1s { animation-delay: var(--animate-delay); }
+.animate__delay-2s { animation-delay: calc(var(--animate-delay) * 2); }
+.animate__delay-3s { animation-delay: calc(var(--animate-delay) * 3); }
+.animate__delay-4s { animation-delay: calc(var(--animate-delay) * 4); }
 
 body {
     font-family: 'Titillium Web', sans-serif;

@@ -1,5 +1,4 @@
 import React from "react";
-import "animate.css";
 import "./portfolio.scss";
 
 import { projects, caseStudies, agencyWork } from "./portfolio.data";
