@@ -13,7 +13,8 @@ const StackList = ({ items }) => (
 
 const ProjectCard = ({ name, url, desc, meta, imgSrc, stack }) => (
   <div className="port_item">
-    <div className="back_img" style={{ backgroundImage: `url(${imgSrc})` }}>
+    <div className="back_img">
+      <img src={imgSrc} alt={`${name} screenshot`} className="back_img_photo" />
       <div className="link_div"></div>
       <a className="app_link" href={url} target="_blank" rel="noopener noreferrer">
         <i className="fas fa-link"></i>
