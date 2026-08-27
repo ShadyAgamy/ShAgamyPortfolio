@@ -1,6 +1,6 @@
 # ShAgamyPortfolio
 
-Shady Agamy's personal portfolio site — a single-page React app covering who he is, his resume, and his project work.
+My personal portfolio site: a single-page React app covering who I am, my resume, and my project work.
 
 **Live site:** https://ShadyAgamy.github.io/ShAgamyPortfolio
 
