@@ -13,8 +13,6 @@ Shady Agamy's personal portfolio site — a single-page React app covering who h
 - [Vitest](https://vitest.dev/) + Testing Library for tests
 - Deployed to GitHub Pages via the `gh-pages` package
 
-No TypeScript, no global state manager (component-local `useState` only).
-
 ## What's on the site
 
 - **Home** — landing/intro page
