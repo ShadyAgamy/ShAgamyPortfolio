@@ -14,7 +14,6 @@
   },
   "scripts": {
     "start": "vite",
-    "jobs": "node tools/jobfeed/index.js",
     "build": "vite build",
     "test": "vitest",
     "preview": "vite preview",
