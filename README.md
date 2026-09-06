@@ -7,8 +7,9 @@ My personal portfolio site: a single-page React app covering who I am, my resume
 ## Stack
 
 - [React 19](https://react.dev/) with [React Router v5](https://v5.reactrouter.com/) (`HashRouter`, since GitHub Pages has no server-side rewrites)
+- [TypeScript](https://www.typescriptlang.org/)
 - [Vite](https://vitejs.dev/) for dev server and build
-- Sass, per-component (`*.scss` next to each `.jsx`)
+- Sass, per-component (`*.scss` next to each `.tsx`)
 - [EmailJS](https://www.emailjs.com/) for the contact form, [SweetAlert2](https://sweetalert2.github.io/) for its success/failure feedback
 - [Vitest](https://vitest.dev/) + Testing Library for tests
 - Deployed to GitHub Pages via the `gh-pages` package
@@ -18,7 +19,7 @@ My personal portfolio site: a single-page React app covering who I am, my resume
 - **Home** — landing/intro page
 - **About** — background and skills
 - **Resume** — CV content
-- **Portfolio** — shipped projects, case studies, and agency work, driven by data in `src/pages/portfolio/portfolio.data.js`
+- **Portfolio** — shipped projects, case studies, and agency work, driven by data in `src/pages/portfolio/portfolio.data.ts`
 - **Contact** — a working contact form (EmailJS) with a mailto fallback if the request fails
 
 ## Development

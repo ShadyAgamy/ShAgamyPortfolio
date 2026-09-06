@@ -4,12 +4,12 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Overview
 
-Shady Agamy's personal portfolio site. React 19 + React Router v5, built with Vite, deployed to GitHub Pages. No TypeScript.
+Shady Agamy's personal portfolio site. React 19 + React Router v5, built with Vite, deployed to GitHub Pages. Uses TypeScript.
 
 ## Security
 
 - This repo is **public** on GitHub. Never commit real credentials, passwords, or private API keys — treat anything committed as permanently exposed, since deleting a file later does not remove it from git history.
-- The EmailJS service/template/public key in `Contact.jsx` are the exception: EmailJS public keys are designed to be client-side and are not secrets.
+- The EmailJS service/template/public key in `Contact.tsx` are the exception: EmailJS public keys are designed to be client-side and are not secrets.
 - Before committing, scan changed files for credential-like strings (`password`, `pass:`, `api_key`, `secret`, `token`). If one is found in tracked history (not just the working tree), flag it immediately with concrete remediation steps: rotate the credential, and note that history still needs purging (e.g. `git filter-repo`) since removing the file alone leaves it in old commits.
 
 ## Commands
@@ -18,7 +18,7 @@ Shady Agamy's personal portfolio site. React 19 + React Router v5, built with Vi
 npm start      # Vite dev server at localhost:5173/ShAgamyPortfolio/
 npm run build  # production build to /build (outDir is set to `build`, not Vite's default `dist`, so `npm run deploy` doesn't need updating)
 npm run preview # serve the /build output locally to sanity-check a production build
-npm test       # Vitest (only src/App.test.jsx exists, a default smoke test)
+npm test       # Vitest (only src/App.test.tsx exists, a default smoke test)
 npm run deploy # npm run build, then gh-pages -d build (publishes /build to the gh-pages branch)
 ```
 
@@ -34,10 +34,10 @@ No lint script is wired into `npm test`/`build`; run `npx eslint src` manually. 
 
 ## Architecture
 
-- **Entry**: `index.html` (repo root, Vite convention) loads `src/main.jsx`, which wraps `<App />` in `HashRouter` (GitHub Pages has no server-side rewrite, so routes are `/#/about` etc.) plus a `ScrollToTop` component that resets scroll on route change, and mounts via `react-dom/client`'s `createRoot`.
-- **`src/App.jsx`**: top-level layout. Owns `menuOpen` state (open by default ≥900px viewport width, toggle-only below it) and renders `<Switch>` routes for `/`, `/about`, `/resume`, `/portfolio`, `/contact` next to the persistent `<Menu>`.
-- **Pages** (`src/pages/<name>/<Name>.jsx` + co-located `.scss`): each page is a single self-contained component — no shared page layout component beyond what `App.jsx` provides, no global state manager (no Redux/Context store beyond local `useState`).
-- **Portfolio content is data-driven**: `src/pages/portfolio/portfolio.data.js` exports `projects`, `caseStudies`, and `agencyWork` arrays; `Portfolio.jsx` just maps over them via `ProjectCard`/`CaseStudy` presentational components. To add/edit a portfolio entry, edit the data file, not the JSX. Project images live in `public/imgs/projects/` and are referenced via `${import.meta.env.BASE_URL}imgs/projects/<file>` (Vite's equivalent of CRA's `PUBLIC_URL`).
-- **Contact form** (`src/pages/contact/Contact.jsx`): submits via EmailJS (`@emailjs/browser`, service/template/public key are hardcoded constants — EmailJS public keys are designed to be client-side, not secrets) and shows success/failure via SweetAlert2. On failure it falls back to showing the direct mailto address rather than surfacing the raw API error.
-- **Styling**: Sass per-component (`*.scss` next to each `.jsx`), plus `src/reset.scss` and `src/App.scss` for global/reset styles, and `animate.css` for scroll-in animations (`animate__animated` classes). No CSS-in-JS.
-- **Assets**: `src/assets/` for images used directly by components (imported as modules, e.g. `profile.png` in the menu); `public/imgs/` for portfolio project screenshots referenced by URL through `portfolio.data.js`.
+- **Entry**: `index.html` (repo root, Vite convention) loads `src/main.tsx`, which wraps `<App />` in `HashRouter` (GitHub Pages has no server-side rewrite, so routes are `/#/about` etc.) plus a `ScrollToTop` component that resets scroll on route change, and mounts via `react-dom/client`'s `createRoot`.
+- **`src/App.tsx`**: top-level layout. Owns `menuOpen` state (open by default ≥900px viewport width, toggle-only below it) and renders `<Switch>` routes for `/`, `/about`, `/resume`, `/portfolio`, `/contact` next to the persistent `<Menu>`.
+- **Pages** (`src/pages/<name>/<Name>.tsx` + co-located `.scss`): each page is a single self-contained component — no shared page layout component beyond what `App.tsx` provides, no global state manager (no Redux/Context store beyond local `useState`).
+- **Portfolio content is data-driven**: `src/pages/portfolio/portfolio.data.ts` exports `projects`, `caseStudies`, and `agencyWork` arrays; `Portfolio.tsx` just maps over them via `ProjectCard`/`CaseStudy` presentational components. To add/edit a portfolio entry, edit the data file, not the JSX. Project images live in `public/imgs/projects/` and are referenced via `${import.meta.env.BASE_URL}imgs/projects/<file>` (Vite's equivalent of CRA's `PUBLIC_URL`).
+- **Contact form** (`src/pages/contact/Contact.tsx`): submits via EmailJS (`@emailjs/browser`, service/template/public key are hardcoded constants — EmailJS public keys are designed to be client-side, not secrets) and shows success/failure via SweetAlert2. On failure it falls back to showing the direct mailto address rather than surfacing the raw API error.
+- **Styling**: Sass per-component (`*.scss` next to each `.tsx`), plus `src/reset.scss` and `src/App.scss` for global/reset styles, and `animate.css` for scroll-in animations (`animate__animated` classes). No CSS-in-JS.
+- **Assets**: `src/assets/` for images used directly by components (imported as modules, e.g. `profile.png` in the menu); `public/imgs/` for portfolio project screenshots referenced by URL through `portfolio.data.ts`.
