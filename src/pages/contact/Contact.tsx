@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import emailjs from "@emailjs/browser";
-import Swal from "sweetalert2/dist/sweetalert2.js";
+import Swal from "sweetalert2";
 
 import "./contact.scss";
 
@@ -12,9 +12,9 @@ const CONTACT_EMAIL = "shadyalonsoo@gmail.com";
 const Contact = () => {
   const [sending, setSending] = useState(false);
 
-  const submitEmail = (e) => {
+  const submitEmail = (e: React.SubmitEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const form = e.target;
+    const form = e.currentTarget;
 
     if (sending) return;
     setSending(true);
@@ -41,7 +41,7 @@ const Contact = () => {
               "Something went wrong on our side. Please email me directly at " +
               `<a href="mailto:${CONTACT_EMAIL}">${CONTACT_EMAIL}</a>.`,
           });
-        }
+        },
       )
       .finally(() => setSending(false));
   };
@@ -140,7 +140,7 @@ const Contact = () => {
                 name="message"
                 id="message"
                 className="form-control"
-                rows="1"
+                rows={1}
                 required
               />
             </div>

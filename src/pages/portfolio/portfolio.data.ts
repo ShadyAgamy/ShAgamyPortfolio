@@ -1,4 +1,5 @@
-const img = (name) => `${import.meta.env.BASE_URL}imgs/projects/${name}`;
+const img = (name: string) =>
+  `${import.meta.env.BASE_URL}imgs/projects/${name}`;
 
 export const projects = [
   {
@@ -38,7 +39,13 @@ export const caseStudies = [
       "Now used across 7 list views. A new view adopts filtering by wrapping in the provider and " +
       "passing config props, with no new state code. Built with a colleague; the tech lead did " +
       "later refactors, especially around the localStorage sync.",
-    stack: ["React", "TypeScript", "React Context", "URL state", "localStorage"],
+    stack: [
+      "React",
+      "TypeScript",
+      "React Context",
+      "URL state",
+      "localStorage",
+    ],
   },
   {
     id: "approvals-sync",
@@ -66,7 +73,13 @@ export const caseStudies = [
       "Tickets and Document Management, the two most used pages in the product, and has its own " +
       "section in the main navigation with five views: all approvals, DMS approvals, tickets " +
       "approvals, pending my approvals, and settings and workflows.",
-    stack: ["React", "TypeScript", "React Context", "CustomEvent pub/sub", "Race-condition guard"],
+    stack: [
+      "React",
+      "TypeScript",
+      "React Context",
+      "CustomEvent pub/sub",
+      "Race-condition guard",
+    ],
   },
 ];
 

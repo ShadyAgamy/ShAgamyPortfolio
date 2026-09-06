@@ -1,9 +1,18 @@
 import React from "react";
 import "./portfolio.scss";
 
-import { projects, caseStudies, agencyWork } from "./portfolio.data";
+import { projects, caseStudies, agencyWork } from "./portfolio.data.ts";
 
-const StackList = ({ items }) => (
+interface ProjectCardProps {
+  name: string;
+  url: string;
+  desc: string;
+  meta?: string;
+  imgSrc: string;
+  stack: string[];
+}
+
+const StackList = ({ items }: { items: string[] }) => (
   <ul className="stack_list">
     {items.map((item) => (
       <li key={item}>{item}</li>
@@ -11,12 +20,24 @@ const StackList = ({ items }) => (
   </ul>
 );
 
-const ProjectCard = ({ name, url, desc, meta, imgSrc, stack }) => (
+const ProjectCard = ({
+  name,
+  url,
+  desc,
+  meta,
+  imgSrc,
+  stack,
+}: ProjectCardProps) => (
   <div className="port_item">
     <div className="back_img">
       <img src={imgSrc} alt={`${name} screenshot`} className="back_img_photo" />
       <div className="link_div"></div>
-      <a className="app_link" href={url} target="_blank" rel="noopener noreferrer">
+      <a
+        className="app_link"
+        href={url}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         <i className="fas fa-link"></i>
       </a>
     </div>
@@ -27,7 +48,25 @@ const ProjectCard = ({ name, url, desc, meta, imgSrc, stack }) => (
   </div>
 );
 
-const CaseStudy = ({ title, context, role, problem, solution, decision, result, stack }) => {
+const CaseStudy = ({
+  title,
+  context,
+  role,
+  problem,
+  solution,
+  decision,
+  result,
+  stack,
+}: {
+  title: string;
+  context: string;
+  role: string;
+  problem: string;
+  solution: string;
+  decision: string;
+  result: string;
+  stack: string[];
+}) => {
   const rows = [
     ["Problem", problem],
     ["Approach", solution],
@@ -73,8 +112,9 @@ export default function Portfolio() {
       <section className="port_section animate__animated animate__slow animate__fadeInUp animate__delay-2s">
         <h4 className="port_section_title">Case Studies</h4>
         <p className="port_section_note">
-          Production work at PlanRadar, a B2B construction SaaS used across Europe. The codebase is
-          private, so these are written summaries rather than links.
+          Production work at PlanRadar, a B2B construction SaaS used across
+          Europe. The codebase is private, so these are written summaries rather
+          than links.
         </p>
         <div className="case_studies">
           {caseStudies.map((study) => (
@@ -86,7 +126,8 @@ export default function Portfolio() {
       <section className="port_section animate__animated animate__slow animate__fadeInUp animate__delay-3s">
         <h4 className="port_section_title">Early Career / Agency Work</h4>
         <p className="port_section_note">
-          Client work from before I moved to React. Included for track record, not current stack.
+          Client work from before I moved to React. Included for track record,
+          not current stack.
         </p>
         <div className="port_items">
           {agencyWork.map((work) => (

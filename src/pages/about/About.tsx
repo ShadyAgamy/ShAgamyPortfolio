@@ -1,5 +1,3 @@
-import React from "react";
-
 import "./about.scss";
 import mainLogo from "../../assets/info.svg";
 
@@ -20,13 +18,16 @@ export default function About() {
             I am <span className="co_main">Shady Agamy</span>
           </h3>
           <p className=" animate__animated animate__slow animate__fadeInUp animate__delay-3s">
-            I'm a frontend developer with seven years in web development, four of them building
-            React and TypeScript at PlanRadar &#8212; a B2B construction SaaS used across Europe.
-            There I worked in a large-scale codebase of 21 feature bundles, in a frontend team of
-            around ten engineers, shipping features end to end across ticket management, document
-            management, approval workflows, and advanced filtering, and reviewing merge requests
-            daily for the whole team. I care about clean, maintainable code, solid UI, and shipping
-            features that hold up in production &#8212; and I keep learning as the stack evolves.
+            I'm a frontend developer with seven years in web development, four
+            of them building React and TypeScript at PlanRadar &#8212; a B2B
+            construction SaaS used across Europe. There I worked in a
+            large-scale codebase of 21 feature bundles, in a frontend team of
+            around ten engineers, shipping features end to end across ticket
+            management, document management, approval workflows, and advanced
+            filtering, and reviewing merge requests daily for the whole team. I
+            care about clean, maintainable code, solid UI, and shipping features
+            that hold up in production &#8212; and I keep learning as the stack
+            evolves.
           </p>
           <ul className="info animate__animated animate__slow animate__fadeInUp animate__delay-4s">
             <li>
@@ -42,22 +43,22 @@ export default function About() {
               <span>Location</span>: Cairo, Egypt
             </li>
             <li>
-              <span>Time zone</span>: Full overlap with CET / CEST business hours
+              <span>Time zone</span>: Full overlap with CET / CEST business
+              hours
             </li>
             <li>
               <span>Availability</span>: Open to remote opportunities
             </li>
           </ul>
-          {/* <ScrollAnimation animateIn="animate__fadeInUp" duration={1} delay={2500}  offset={50}> */}
-            <a
-              className="custom_btn  animate__animated animate__slow animate__fadeInUp animate__delay-5s"
-              href="Shady_Agamy_CV.pdf"
-              target="_blank"
-              download
-            >
-              Download cv
-            </a>
-          {/* </ScrollAnimation> */}
+
+          <a
+            className="custom_btn  animate__animated animate__slow animate__fadeInUp animate__delay-5s"
+            href="Shady_Agamy_CV.pdf"
+            target="_blank"
+            download
+          >
+            Download cv
+          </a>
         </div>
       </div>
     </div>
