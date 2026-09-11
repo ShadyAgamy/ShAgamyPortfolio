@@ -32,8 +32,9 @@
             margin-bottom: 2rem;
         }
         .homepage_location {
-            font-size: 1.1rem;
-            color: #a4acc4;
+            font-size: var(--fs-meta);
+            line-height: var(--lh-meta);
+            color: var(--color-meta);
             margin-bottom: 1.5rem;
             i {
                 color: #C3083F;

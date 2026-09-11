@@ -15,7 +15,9 @@ interface ProjectCardProps {
 const StackList = ({ items }: { items: string[] }) => (
   <ul className="stack_list">
     {items.map((item) => (
-      <li key={item}>{item}</li>
+      <li key={item} className="tag_chip">
+        {item}
+      </li>
     ))}
   </ul>
 );

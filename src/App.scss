@@ -5,6 +5,26 @@
   --animate-delay: 250ms;
   --mainColor: #c3083f;
   --seconderyColor: #255a83;
+
+  // Shared type scale — page title stays per-page (main_heading), everything
+  // below is shared across Home/About/Resume/Portfolio/Contact.
+  --fs-section-heading: 1.5rem; // 24px
+  --fw-section-heading: 700;
+  --fs-card-title: 1.1875rem; // 19px
+  --fw-card-title: 600;
+  --fs-body: 0.9375rem; // 15px
+  --lh-body: 1.65;
+  --fs-meta: 0.8125rem; // 13px
+  --lh-meta: 1.5;
+
+  // Text colors tied to the scale. --color-fg is the "full strength"
+  // foreground; body/meta are lightened off #a4acc4/#7d8496 just enough to
+  // clear the 75% / 60% luminance floor against the #10121b background.
+  --color-fg: #eee;
+  --color-card-title: #ccc;
+  --color-body: #adb4d1;
+  --color-meta: #8b93aa;
+  --color-meta-accent: #ff6684; // brightened var(--mainColor) for meta-sized red text
 }
 
 ::-moz-selection {
@@ -92,9 +112,20 @@
 
 body {
   font-family: "Titillium Web", sans-serif;
-  color: #a4acc4;
+  color: var(--color-body);
   background-color: #10121b;
   overflow-x: hidden;
+}
+
+.tag_chip {
+  border: 1px solid var(--mainColor);
+  border-radius: 20px;
+  padding: 0.3rem 0.9rem;
+  font-size: var(--fs-meta);
+  line-height: var(--lh-meta);
+  color: #eee;
+  background-color: rgba(#c3083f, 0.15);
+  white-space: nowrap;
 }
 
 a {

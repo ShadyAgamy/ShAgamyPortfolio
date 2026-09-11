@@ -96,18 +96,7 @@ export default function Resume() {
         </h4>
         <div style={{ display: "flex", flexWrap: "wrap", gap: "0.5rem" }}>
           {items.map((item) => (
-            <span
-              key={item}
-              style={{
-                border: "1px solid #C3083F",
-                borderRadius: "20px",
-                padding: "0.4rem 1rem",
-                fontSize: "1rem",
-                color: "#fff",
-                backgroundColor: "rgba(195, 8, 63, 0.15)",
-                whiteSpace: "nowrap",
-              }}
-            >
+            <span key={item} className="tag_chip">
               {item}
             </span>
           ))}
@@ -127,19 +116,9 @@ export default function Resume() {
               {company}
             </a>
             {desc && (
-              <ul
-                className="work_ex--desc"
-                style={{
-                  marginTop: "0.6rem",
-                  paddingLeft: "1.1rem",
-                  fontSize: "1.05rem",
-                  lineHeight: 1.6,
-                }}
-              >
+              <ul className="work_ex--desc">
                 {desc.map((line, i) => (
-                  <li key={i} style={{ marginBottom: "0.35rem" }}>
-                    {line}
-                  </li>
+                  <li key={i}>{line}</li>
                 ))}
               </ul>
             )}

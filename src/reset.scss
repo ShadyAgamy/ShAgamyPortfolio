@@ -43,6 +43,6 @@ table {
 }
 
 p {
-	font-size: 1.1rem;
-    line-height: 1.4;
+	font-size: var(--fs-body);
+    line-height: var(--lh-body);
 }

@@ -10,10 +10,9 @@
     z-index: 1;
     .shadow {
         position: absolute;
-        font-size: 6rem;
-        top: 34%;
+        font-size: 4rem;
+        top: 0;
         left: 0px;
-        font-size: 6rem;
         line-height: 1;
         font-weight: 900;
         color: rgba(25, 29, 43, .44);
@@ -25,7 +24,7 @@
         user-select: none;
         white-space: nowrap;
         @media screen and (max-width: 900px) {
-            font-size: 3.2rem;
+            font-size: 2.6rem;
         }
     }
     span {
@@ -80,8 +79,9 @@
             width: 99%;
         }
         h3 {
-            font-size: 2rem;
-            color: #b7b7b7;
+            font-size: var(--fs-section-heading);
+            font-weight: var(--fw-section-heading);
+            color: var(--color-fg);
             margin-bottom: 1rem;
         }
         p {
@@ -92,6 +92,9 @@
             display: flex;
             flex-direction: column;
             margin-bottom: 2rem;
+            font-size: var(--fs-meta);
+            line-height: var(--lh-meta);
+            color: var(--color-meta);
             li {
                 display: flex;
                 margin-bottom: 1rem;

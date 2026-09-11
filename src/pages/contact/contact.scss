@@ -43,20 +43,23 @@
         }
         .text {
             h4 {
-                font-size: 1.2rem;
-                font-weight: 600;
+                font-size: var(--fs-card-title);
+                font-weight: var(--fw-card-title);
+                color: var(--color-card-title);
                 margin-bottom: 1rem;
             }
-            a {
-                color: #a4acc4;
-                font-size: 1rem;
+            a,
+            p {
+                color: var(--color-meta);
+                font-size: var(--fs-meta);
+                line-height: var(--lh-meta);
                 display: block;
                 margin-bottom: .5rem;
                 font-weight: 300;
                 transition: all .5s cubic-bezier(0.075, 0.82, 0.165, 1);
-                &:hover {
-                    color: #C3083F;
-                }
+            }
+            a:hover {
+                color: #C3083F;
             }
         }
     }
@@ -66,8 +69,9 @@
     width: 100%;
     max-width: 45rem;
     &>p {
-        font-size: 1.5rem;
-        font-weight: 600;
+        font-size: var(--fs-section-heading);
+        font-weight: var(--fw-section-heading);
+        color: var(--color-fg);
         margin-bottom: 5px;
     }
     .input_group {
@@ -81,7 +85,8 @@
             transition: all .4s ease-out;
             pointer-events: none;
             padding: 0 10px;
-            font-size: .94rem;
+            font-size: var(--fs-meta);
+            color: var(--color-meta);
         }
         input,
         textarea {

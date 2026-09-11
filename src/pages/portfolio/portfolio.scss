@@ -6,16 +6,17 @@
     }
   }
   .port_section_title {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: #ccc;
+    font-size: var(--fs-section-heading);
+    font-weight: var(--fw-section-heading);
+    color: var(--color-fg);
     padding-bottom: 0.6rem;
     border-bottom: 1px solid rgba(#c3083f, 0.35);
   }
   .port_section_note {
     margin-top: 0.8rem;
-    color: #7d8496;
-    font-size: 0.95rem;
+    color: var(--color-meta);
+    font-size: var(--fs-meta);
+    line-height: var(--lh-meta);
     font-style: italic;
   }
   .stack_list {
@@ -24,15 +25,6 @@
     gap: 0.5rem;
     margin-top: 1rem;
     list-style: none;
-    li {
-      border: 1px solid #c3083f;
-      border-radius: 20px;
-      padding: 0.3rem 0.9rem;
-      font-size: 0.85rem;
-      color: #eee;
-      background-color: rgba(#c3083f, 0.15);
-      white-space: nowrap;
-    }
   }
   .case_studies {
     margin-top: 2rem;
@@ -49,38 +41,41 @@
       padding: 1.2rem;
     }
     h3 {
-      font-size: 1.3rem;
-      font-weight: 700;
-      color: #ccc;
+      font-size: var(--fs-card-title);
+      font-weight: var(--fw-card-title);
+      color: var(--color-card-title);
     }
     .case_study_context {
       display: block;
-      margin-top: 0.3rem;
-      color: #c3083f;
-      font-size: 0.9rem;
+      margin-top: 6px;
+      color: var(--color-meta-accent);
+      font-size: var(--fs-meta);
+      line-height: var(--lh-meta);
     }
     .case_study_role {
       display: block;
-      margin-top: 0.35rem;
-      color: #7d8496;
-      font-size: 0.9rem;
+      margin-top: 4px;
+      color: var(--color-meta);
+      font-size: var(--fs-meta);
+      line-height: var(--lh-meta);
     }
     dl {
       margin-top: 1.2rem;
     }
     dt {
-      font-size: 0.8rem;
-      font-weight: 700;
+      font-size: var(--fs-meta);
+      font-weight: var(--fw-section-heading);
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      color: #7d8496;
+      color: var(--color-meta);
       margin-bottom: 0.35rem;
     }
     dd {
       margin: 0 0 1.1rem;
-      color: #a4acc4;
-      font-size: 1rem;
-      line-height: 1.6;
+      color: var(--color-body);
+      font-size: var(--fs-body);
+      line-height: var(--lh-body);
+      max-width: 1200px;
       &:last-of-type {
         margin-bottom: 0;
       }
@@ -88,8 +83,9 @@
   }
   .port_item_meta {
     display: block;
-    color: #7d8496;
-    font-size: 0.9rem;
+    color: var(--color-meta);
+    font-size: var(--fs-meta);
+    line-height: var(--lh-meta);
     margin-bottom: 0.5rem;
   }
   .port_items {
@@ -180,9 +176,9 @@
         }
       }
       h3 {
-        font-size: 1.4rem;
-        color: #ccc;
-        font-weight: 700;
+        font-size: var(--fs-card-title);
+        color: var(--color-card-title);
+        font-weight: var(--fw-card-title);
         margin-bottom: 0.7rem;
         width: 100%;
         @media screen and (max-width: 750px) {
@@ -191,9 +187,9 @@
       }
       p {
         width: 100%;
-        color: #a4acc4;
-        font-size: 1rem;
-        line-height: 1.3rem;
+        color: var(--color-body);
+        font-size: var(--fs-body);
+        line-height: var(--lh-body);
       }
     }
   }
