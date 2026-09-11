@@ -52,7 +52,7 @@
 .animate__animated {
   animation-timing-function: ease;
   animation-duration: var(--animate-duration);
-  animation-fill-mode: both;
+  animation-fill-mode: both; // not nice to have it as it will keep the elements have transform properties after the animation ends which will make them have their own render layer alwasys which effect the GPU AND CPU performance
 
   @media (prefers-reduced-motion: reduce) {
     animation-duration: 1ms !important;

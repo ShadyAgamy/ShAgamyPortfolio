@@ -81,6 +81,46 @@ export const caseStudies = [
       "Race-condition guard",
     ],
   },
+  {
+    id: "dms-uploader",
+    title: "Document Management Uploader & Versioning",
+    context: "PlanRadar - Document Management System",
+    role: "Built the file and folder uploader and the version comparison modal.",
+    problem:
+      "The Document Management System is a Google Drive-style file store, but it had no way to " +
+      "upload whole folders with progress feedback, or to manage multiple versions of the same " +
+      "file once it was uploaded.",
+    solution:
+      "Built a file and folder uploader with per-file upload progress indicators, and a version " +
+      "modal that lets users upload a new version of a file and compare it against previous ones.",
+    decision: "",
+    result:
+      "Users can track folder uploads as they happen and keep a version history for any file " +
+      "without leaving the document view.",
+    stack: ["React", "TypeScript", "REST APIs"],
+  },
+  {
+    id: "support-chatbot",
+    title: "In-App Support Chatbot",
+    context: "PlanRadar - customer support",
+    role: "Built the chatbot as a standalone Preact app, embedded into the main product as a self-contained widget.",
+    problem:
+      "The product needed in-app support chat, but building it directly into the main React app " +
+      "would have added weight and coupling to the primary codebase for a panel most users rarely " +
+      "open.",
+    solution:
+      "Built the chatbot as its own Preact app for a small bundle size and full isolation from the " +
+      "main app, then packaged it as a self-contained widget exposing an init API that the main app " +
+      "calls to mount and control it. It handles real-time chat over WebSocket, renders markdown " +
+      "responses as HTML, and manages sessions via the backend.",
+    decision:
+      "Preact over adding to the main React bundle: the widget only needs to mount conditionally, " +
+      "and isolation kept it decoupled from the host app's dependencies and state.",
+    result:
+      "A working support widget any page in the product can mount without adding to the main " +
+      "app's bundle.",
+    stack: ["Preact", "WebSockets", "Markdown rendering"],
+  },
 ];
 
 export const agencyWork = [

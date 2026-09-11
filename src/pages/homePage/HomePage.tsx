@@ -8,10 +8,12 @@ export default function HomePage() {
           Hi, I am <span className="co_main">Shady Agamy</span>
         </h1>
         <p className="animate__animated animate__slow animate__fadeInUp animate__delay-2s">
-          I'm a frontend developer with seven years in web development, four of
-          them building React &#38; TypeScript at PlanRadar. I focus on shipping
-          clean, reliable features for real products &#8212; from UI to state
-          management.
+          Frontend developer with 6+ years of experience in web development,
+          four of them focused on React &#38; TypeScript. At PlanRadar, a B2B
+          construction SaaS used across Europe, I built the approvals feature
+          and the core of the shared filter system in a large-scale codebase.
+          I'm comfortable owning a feature end to end, from API integration to
+          edge cases and testing.
         </p>
         <p className="homepage_location animate__animated animate__slow animate__fadeInUp animate__delay-3s">
           <i className="fas fa-map-marker-alt"></i> Cairo, Egypt &#8212; full

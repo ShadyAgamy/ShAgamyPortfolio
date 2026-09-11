@@ -1,34 +1,10 @@
 .skills_section {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 4rem;
     margin-top: 3rem;
-    justify-content: space-between;
-    .skill {
-        width: 47%;
-        display: flex;
-        flex-direction: column;
-        margin-bottom: 2.5rem;
-        @media screen and (max-width: 600px) {
-            width: 100%;
-        }
-        &_name {
-            text-transform: uppercase;
-            color: #ccc;
-            font-weight: 600;
-            font-size: 1.1rem;
-        }
-        .progress-bar-rect-wrap-container {
-            flex-direction: row-reverse;
-            h2 {
-                margin: .6rem 1rem!important;
-                margin-left: 0!important;
-                font-size: 1.1rem!important;
-            }
-            .inner-rect-bar {
-                background-color: #C3083F!important;
-                border-radius: 0px!important;
-            }
-        }
+    @media screen and (max-width: 600px) {
+        grid-template-columns: 1fr;
     }
 }
 

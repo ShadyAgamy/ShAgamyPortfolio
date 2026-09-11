@@ -43,7 +43,6 @@ const skills = [
       "i18n / localization",
       "LLM API integration",
       "Claude",
-      "Cursor",
     ],
   },
 ];
@@ -56,11 +55,11 @@ const workExperience = [
     period: "Jul 2022 - Aug 2026",
     companyLink: "https://www.planradar.com/",
     desc: [
-      "Built and maintained features in a large-scale React + TypeScript SPA (21 feature bundles) for a B2B construction platform used across Europe, in a frontend team of around 10 engineers.",
-      "Created the core of a shared filter system - the React Context provider, the URL sync and the routing params - bringing filtering to 7 list views that previously had none.",
-      "Built the approvals module from scratch with one colleague: its own section in the main navigation with five views, running inside Tickets and Document Management, the two most used pages in the product.",
-      "Shipped work across major product areas: ticket management, document management (file preview & versioning), and approval workflows with live updates pushed over WebSockets.",
-      "Reviewed merge requests daily for the whole frontend team, including the tech lead's.",
+      "Built the approvals feature from scratch with one colleague: approval cycles for tickets and documents. Created its shared state context and around 15 of its core files, running inside Tickets and Document Management, the two most used pages in the product, with its own section in the main navigation containing five views.",
+      "Designed the cross-view sync that keeps approval state consistent across parts of the app that do not share a provider tree, using a browser event bus and a counter token to drop stale results.",
+      "Created the core of a shared filter system that brought filtering to 7 list views that had none before, including tickets and documents - the React Context provider, the URL sync and the routing params - so a new view adopts filtering by wrapping in the provider with no new state code.",
+      "Built features in the Document Management System, a Google Drive-style file store: the file and folder uploader with upload progress indicators, and the version modal that lets users upload multiple versions of a file and compare them.",
+      "Built the in-app support chatbot as a standalone Preact app for small bundle size and isolation from the main codebase, bundled as a self-contained widget with real-time chat over WebSocket.",
     ],
   },
   {

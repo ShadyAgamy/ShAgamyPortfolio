@@ -18,15 +18,14 @@ export default function About() {
             I am <span className="co_main">Shady Agamy</span>
           </h3>
           <p className=" animate__animated animate__slow animate__fadeInUp animate__delay-3s">
-            I'm a frontend developer with seven years in web development, four
-            of them building React and TypeScript at PlanRadar &#8212; a B2B
-            construction SaaS used across Europe. There I worked in a
-            large-scale codebase of 21 feature bundles, in a frontend team of
-            around ten engineers, shipping features end to end across ticket
-            management, document management, approval workflows, and advanced
-            filtering, and reviewing merge requests daily for the whole team. I
-            care about clean, maintainable code, solid UI, and shipping features
-            that hold up in production &#8212; and I keep learning as the stack
+            I'm a frontend developer with 6+ years in web development, four of
+            them focused on React and TypeScript at PlanRadar &#8212; a B2B
+            construction SaaS used across Europe. There, I've owned features
+            end to end: the approvals module from scratch, the shared filter
+            system's core architecture, and pieces of the document management
+            system, from API integration through edge cases and testing. I
+            care about clean, maintainable code and shipping features that
+            hold up in production &#8212; and I keep learning as the stack
             evolves.
           </p>
           <ul className="info animate__animated animate__slow animate__fadeInUp animate__delay-4s">
@@ -53,7 +52,7 @@ export default function About() {
 
           <a
             className="custom_btn  animate__animated animate__slow animate__fadeInUp animate__delay-5s"
-            href="Shady_Agamy_CV.pdf"
+            href="Shady_Agamy_Frontend_Developer_CV.pdf"
             target="_blank"
             download
           >
