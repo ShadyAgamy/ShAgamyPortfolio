@@ -1,41 +1,39 @@
-@import url("https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;1,300;1,400&display=swap");
 @import "./alertDrakTheme.scss";
+
 :root {
-  --animate-duration: 400ms;
+  --animate-duration: 550ms;
   --animate-delay: 250ms;
-  --mainColor: #c3083f;
-  --seconderyColor: #255a83;
 
-  // Shared type scale — page title stays per-page (main_heading), everything
-  // below is shared across Home/About/Resume/Portfolio/Contact.
-  --fs-section-heading: 1.5rem; // 24px
-  --fw-section-heading: 700;
-  --fs-card-title: 1.1875rem; // 19px
-  --fw-card-title: 600;
-  --fs-body: 0.9375rem; // 15px
-  --lh-body: 1.65;
-  --fs-meta: 0.8125rem; // 13px
-  --lh-meta: 1.5;
+  --font-serif: "Newsreader", Georgia, serif;
+  --font-sans: "IBM Plex Sans", sans-serif;
+  --font-mono: "IBM Plex Mono", monospace;
 
-  // Text colors tied to the scale. --color-fg is the "full strength"
-  // foreground; body/meta are lightened off #a4acc4/#7d8496 just enough to
-  // clear the 75% / 60% luminance floor against the #10121b background.
-  --color-fg: #eee;
-  --color-card-title: #ccc;
-  --color-body: #adb4d1;
-  --color-meta: #8b93aa;
-  --color-meta-accent: #ff6684; // brightened var(--mainColor) for meta-sized red text
+  // Accent stays constant across themes; only the neutrals swap.
+  --accent: oklch(0.63 0.16 24);
+  --rule: oklch(0.63 0.16 24 / 0.55);
+
+  // Dark theme (default).
+  --bg: oklch(0.19 0.012 258);
+  --fg: oklch(0.95 0.004 258);
+  --hair: oklch(1 0 0 / 0.13);
+  --chip: oklch(1 0 0 / 0.06);
+}
+
+:root[data-theme="light"] {
+  --bg: oklch(0.975 0.005 85);
+  --fg: oklch(0.23 0.012 60);
+  --hair: oklch(0.23 0.012 60 / 0.16);
+  --chip: oklch(0.23 0.012 60 / 0.05);
 }
 
 ::-moz-selection {
-  /* Code for Firefox */
-  background: var(--mainColor);
-  color: #b7b7b7;
+  background: var(--accent);
+  color: var(--bg);
 }
 
 ::selection {
-  background: var(--mainColor);
-  color: #b7b7b7;
+  background: var(--accent);
+  color: var(--bg);
 }
 
 @keyframes fadeIn {
@@ -47,26 +45,11 @@
   }
 }
 
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translate3d(0, 100%, 0);
-  }
-  to {
-    opacity: 1;
-    transform: translate3d(0, 0, 0);
-  }
-}
-
-@keyframes fadeInLeft {
-  from {
-    opacity: 0;
-    transform: translate3d(-100%, 0, 0);
-  }
-  to {
-    opacity: 1;
-    transform: translate3d(0, 0, 0);
-  }
+// Base state for anything revealed via useReveal() - hidden until its
+// IntersectionObserver fires, at which point the animate__* classes below
+// take over and their fill-mode:both keeps the end state.
+.reveal {
+  opacity: 0;
 }
 
 .animate__animated {
@@ -82,16 +65,6 @@
 
 .animate__fadeIn {
   animation-name: fadeIn;
-}
-.animate__fadeInUp {
-  animation-name: fadeInUp;
-}
-.animate__fadeInLeft {
-  animation-name: fadeInLeft;
-}
-
-.animate__slow {
-  animation-duration: calc(var(--animate-duration) * 2);
 }
 
 .animate__delay-1s {
@@ -111,97 +84,182 @@
 }
 
 body {
-  font-family: "Titillium Web", sans-serif;
-  color: var(--color-body);
-  background-color: #10121b;
+  font-family: var(--font-sans);
+  color: var(--fg);
+  background-color: var(--bg);
   overflow-x: hidden;
-}
-
-.tag_chip {
-  border: 1px solid var(--mainColor);
-  border-radius: 20px;
-  padding: 0.3rem 0.9rem;
-  font-size: var(--fs-meta);
-  line-height: var(--lh-meta);
-  color: #eee;
-  background-color: rgba(#c3083f, 0.15);
-  white-space: nowrap;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 a {
   text-decoration: none;
+  color: inherit;
 }
 
 * {
   box-sizing: border-box;
 }
 
-.bg_black {
-  background-color: #1a1a1c;
-}
-
-.co_black {
-  color: #1a1a1c;
-}
-
-.bg_main {
-  background-color: var(--mainColor);
-}
-
 .co_main {
-  color: var(--mainColor);
-}
-
-.co_white {
-  color: #bbb;
+  color: var(--accent);
 }
 
 .page_container {
-  display: flex;
-  min-height: 100vh;
   position: relative;
-  max-width: 100vw;
-  .width_80 {
-    flex: 1 1 80%;
-    margin-left: 18rem;
-    position: relative;
-    z-index: 8;
-    @media screen and (max-width: 900px) {
-      flex: 1 1 100%;
-      margin-left: 0;
+  min-height: 100vh;
+}
+
+.page_content {
+  position: relative;
+}
+
+// Shared page shell: eyebrow + big serif title, used at the top of every page.
+.page {
+  margin: 0 auto;
+  padding: 4.5rem 3.5rem 6rem;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+
+  @media screen and (max-width: 700px) {
+    padding: 3rem 1.25rem 3.5rem;
+    gap: 3rem;
+  }
+}
+
+.page_header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+}
+
+.eyebrow {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--fg);
+  opacity: 0.6;
+}
+
+.page_header h1 {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-size: 3.5rem;
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: var(--fg);
+
+  @media screen and (max-width: 700px) {
+    font-size: 2.4rem;
+  }
+}
+
+.section_title {
+  margin: 0;
+  padding-bottom: 0.875rem;
+  border-bottom: 1px solid var(--hair);
+  font-family: var(--font-serif);
+  font-size: 2.5rem;
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  color: var(--fg);
+
+  @media screen and (max-width: 700px) {
+    font-size: 1.8rem;
+  }
+}
+
+.section_intro {
+  margin: 0;
+  max-width: 68ch;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: var(--fg);
+  opacity: 0.74;
+}
+
+.tag_chip {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  line-height: 1;
+  padding: 0.4375rem 0.625rem;
+  border-radius: 3px;
+  background: var(--chip);
+  color: var(--fg);
+  opacity: 0.8;
+  white-space: nowrap;
+}
+
+// Reusable dt/dd fact list - About's details panel and Contact's info panel.
+.info_list {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--hair);
+
+  &_row {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3125rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--hair);
+  }
+
+  dt {
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--fg);
+    opacity: 0.62;
+  }
+
+  dd {
+    margin: 0;
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    line-height: 1.5;
+    color: var(--fg);
+
+    a:hover {
+      color: var(--accent);
     }
   }
 }
 
-.blue_btn,
-.swal2-confirm.swal2-styled {
+.btn_outline {
+  display: inline-flex;
   align-items: center;
-  appearance: none;
-  background: var(--seconderyColor);
-  border: 0;
-  box-shadow: unset !important;
-  color: #fff;
-  cursor: pointer;
-  height: 48px;
-  min-width: 8rem;
   justify-content: center;
-  line-height: 1;
-  list-style: none;
-  text-decoration: none;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  white-space: nowrap;
-  will-change: box-shadow, transform;
-  font-size: 18px;
-  &:focus,
-  &:hover,
-  &:active {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1));
+  gap: 0.625rem;
+  align-self: flex-start;
+  padding: 0.8125rem 1.25rem;
+  border: 1px solid var(--accent);
+  border-radius: 3px;
+  background: transparent;
+  color: var(--accent);
+  cursor: pointer;
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background: var(--chip);
   }
+
   &:disabled {
     cursor: not-allowed;
     opacity: 0.6;
-    background-image: none;
   }
 }
+

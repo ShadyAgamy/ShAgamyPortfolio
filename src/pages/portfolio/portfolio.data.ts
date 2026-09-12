@@ -17,6 +17,8 @@ export const projects = [
 export const caseStudies = [
   {
     id: "shared-filters",
+    diagram: "filters" as const,
+    figureLabel: "One provider, many list views, state in URL and localStorage",
     title: "Shared Filter System",
     context: "PlanRadar - list views across the product",
     role: "Created the core: the React Context provider, the URL sync, and the routing params.",
@@ -49,6 +51,8 @@ export const caseStudies = [
   },
   {
     id: "approvals-sync",
+    diagram: "approvals" as const,
+    figureLabel: "CustomEvent bus, context refetch, race guard",
     title: "Approvals Cross-View Sync",
     context: "PlanRadar - approvals module",
     role:
@@ -83,6 +87,8 @@ export const caseStudies = [
   },
   {
     id: "dms-uploader",
+    diagram: "uploader" as const,
+    figureLabel: "Upload pipeline, and version comparison",
     title: "Document Management Uploader & Versioning",
     context: "PlanRadar - Document Management System",
     role: "Built the file and folder uploader and the version comparison modal.",
@@ -101,6 +107,8 @@ export const caseStudies = [
   },
   {
     id: "support-chatbot",
+    diagram: "chatbot" as const,
+    figureLabel: "Widget isolation: init API, WebSocket, host app",
     title: "In-App Support Chatbot",
     context: "PlanRadar - customer support",
     role: "Built the chatbot as a standalone Preact app, embedded into the main product as a self-contained widget.",

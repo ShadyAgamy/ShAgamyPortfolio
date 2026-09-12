@@ -1,5 +1,6 @@
 /* eslint-disable react/jsx-no-target-blank */
 import "./resume.scss";
+import { useReveal, fadeInClass } from "../../hooks/useReveal";
 
 const skills = [
   {
@@ -83,74 +84,108 @@ const workExperience = [
   },
 ];
 
-export default function Resume() {
-  const mappedSkills = skills.map(({ id, category, items }, index) => {
-    return (
-      <div
-        key={id}
-        className="skill_group animate__animated animate__fadeInUp"
-        style={{ marginBottom: "1.6rem", animationDelay: `${index * 0.12}s` }}
-      >
-        <h4 className="co_main" style={{ marginBottom: "0.7rem" }}>
-          {category}
-        </h4>
-        <div style={{ display: "flex", flexWrap: "wrap", gap: "0.5rem" }}>
-          {items.map((item) => (
-            <span key={item} className="tag_chip">
-              {item}
-            </span>
-          ))}
-        </div>
+const SkillGroup = ({
+  category,
+  items,
+}: {
+  category: string;
+  items: string[];
+}) => {
+  const { ref, state } = useReveal<HTMLDivElement>("resume");
+  return (
+    <div
+      ref={ref}
+      className={`skill_group ${fadeInClass(state)}`}
+    >
+      <div className="skill_group_label">{category}</div>
+      <div className="skill_group_items">
+        {items.map((item) => (
+          <span key={item} className="tag_chip">
+            {item}
+          </span>
+        ))}
       </div>
-    );
-  });
-
-  const mappedWorkExperience = workExperience.map(
-    ({ id, period, role, company, companyLink, desc }) => {
-      return (
-        <div key={id} className="work_ex">
-          <div className="work_ex--period">{period}</div>
-          <div className="work_ex--details">
-            <h4 className="role co_main">{role}</h4>
-            <a href={`${companyLink}`} className="company " target="_blank">
-              {company}
-            </a>
-            {desc && (
-              <ul className="work_ex--desc">
-                {desc.map((line, i) => (
-                  <li key={i}>{line}</li>
-                ))}
-              </ul>
-            )}
-          </div>
-        </div>
-      );
-    },
+    </div>
   );
+};
+
+const WorkExperienceItem = ({
+  period,
+  role,
+  company,
+  companyLink,
+  desc,
+}: {
+  period: string;
+  role: string;
+  company: string;
+  companyLink: string;
+  desc: string[];
+}) => {
+  const { ref, state } = useReveal<HTMLDivElement>("resume");
+  return (
+    <div
+      ref={ref}
+      className={`work_ex ${fadeInClass(state)}`}
+    >
+      <div className="work_ex_period">{period}</div>
+      <div className="work_ex_details">
+        <h3>{role}</h3>
+        <a href={companyLink} target="_blank" rel="noopener noreferrer">
+          {company}
+        </a>
+        <ul>
+          {desc.map((line, i) => (
+            <li key={i}>{line}</li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  );
+};
+
+export default function Resume() {
+  const header = useReveal<HTMLElement>("resume");
+  const skillsTitle = useReveal<HTMLHeadingElement>("resume");
+  const workTitle = useReveal<HTMLHeadingElement>("resume");
 
   return (
-    <div className="about_page">
-      <h2 className="main_heading animate__animated animate__slow animate__fadeInLeft">
-        MY SKILLS <span></span>
-        <p className="shadow animate__animated animate__slow animate__fadeInLeft">
-          MY SKILLS
-        </p>
-      </h2>
-      <div style={{ marginTop: "0rem" }} className="">
-        <div className="skills_section">{mappedSkills}</div>
-      </div>
+    <div className="page resume_page">
+      <header
+        ref={header.ref}
+        className={`page_header ${fadeInClass(header.state)}`}
+      >
+        <p className="eyebrow">Skills and experience</p>
+        <h1>Resume</h1>
+      </header>
 
-      <div className="resume_section ">
-        <h2 className="main_heading animate__animated animate__slow animate__fadeInLeft animate__delay-1s">
-          RESUME <span></span>
+      <section className="resume_section">
+        <h2
+          ref={skillsTitle.ref}
+          className={`section_title ${fadeInClass(skillsTitle.state)}`}
+        >
+          Skills
         </h2>
-        <div className="resume_section_main animate__animated animate__slow animate__fadeInUp animate__delay-2s">
-          <h4 className="sec_heading">
-            <i className="fas fa-briefcase"></i>Working Experience
-          </h4>
-          <div className="work_ex_sec">{mappedWorkExperience}</div>
+        <div className="skills_grid">
+          {skills.map(({ id, category, items }) => (
+            <SkillGroup key={id} category={category} items={items} />
+          ))}
         </div>
-      </div>
+      </section>
+
+      <section className="resume_section">
+        <h2
+          ref={workTitle.ref}
+          className={`section_title ${fadeInClass(workTitle.state)}`}
+        >
+          Working Experience
+        </h2>
+        <div className="work_ex_list">
+          {workExperience.map((job) => (
+            <WorkExperienceItem key={job.id} {...job} />
+          ))}
+        </div>
+      </section>
     </div>
   );
 }

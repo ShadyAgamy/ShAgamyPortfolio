@@ -1,10 +1,19 @@
 import { createRoot } from "react-dom/client";
-import { HashRouter } from "react-router-dom";
+import { HashRouter, useLocation } from "react-router-dom";
 
 import "./index.css";
 import App from "./App";
-import ScrollToTop from "./components/ScrollToTop.tsx";
+import { useEffect } from "react";
 const rootElm = document.getElementById("root");
+
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+  return null;
+};
 
 createRoot(rootElm as HTMLElement).render(
   <HashRouter>

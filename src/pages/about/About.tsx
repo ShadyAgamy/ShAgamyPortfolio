@@ -1,23 +1,39 @@
 import "./about.scss";
-import mainLogo from "../../assets/info.svg";
+import { useReveal, fadeInClass } from "../../hooks/useReveal";
+
+const facts = [
+  { label: "Full name", value: "Shady Agamy" },
+  { label: "Nationality", value: "Egyptian" },
+  { label: "Languages", value: "Arabic, English" },
+  { label: "Location", value: "Cairo, Egypt" },
+  { label: "Time zone", value: "Full overlap with CET / CEST business hours" },
+  { label: "Availability", value: "Open to remote opportunities" },
+];
 
 export default function About() {
+  const header = useReveal<HTMLElement>("about");
+  const bio = useReveal<HTMLDivElement>("about");
+  const info = useReveal<HTMLDListElement>("about");
+
   return (
-    <div className="about_page">
-      <h2 className="main_heading animate__animated animate__slow animate__fadeInLeft ">
-        about me <span></span> <p className="shadow">about me</p>
-      </h2>
-      <div className="about_page-container">
-        <img
-          src={mainLogo}
-          alt="Info shape"
-          className="about_page-img animate__animated animate__slow animate__fadeIn animate__delay-2s"
-        />
-        <div className="about_page-about">
-          <h3 className=" animate__animated animate__slow animate__fadeInUp animate__delay-2s">
+    <div className="page about_page">
+      <header
+        ref={header.ref}
+        className={`page_header ${fadeInClass(header.state)}`}
+      >
+        <p className="eyebrow">Who I am</p>
+        <h1>About me</h1>
+      </header>
+
+      <div className="about_grid">
+        <div
+          ref={bio.ref}
+          className={`about_bio ${fadeInClass(bio.state)}`}
+        >
+          <h2>
             I am <span className="co_main">Shady Agamy</span>
-          </h3>
-          <p className=" animate__animated animate__slow animate__fadeInUp animate__delay-3s">
+          </h2>
+          <p>
             I'm a frontend developer with 6+ years in web development, four of
             them focused on React and TypeScript at PlanRadar &#8212; a B2B
             construction SaaS used across Europe. There, I've owned features
@@ -28,37 +44,28 @@ export default function About() {
             hold up in production &#8212; and I keep learning as the stack
             evolves.
           </p>
-          <ul className="info animate__animated animate__slow animate__fadeInUp animate__delay-4s">
-            <li>
-              <span>Full Name</span>: Shady Agamy
-            </li>
-            <li>
-              <span>Nationality</span>: Egyptian
-            </li>
-            <li>
-              <span>Languages</span>: Arabic, English
-            </li>
-            <li>
-              <span>Location</span>: Cairo, Egypt
-            </li>
-            <li>
-              <span>Time zone</span>: Full overlap with CET / CEST business
-              hours
-            </li>
-            <li>
-              <span>Availability</span>: Open to remote opportunities
-            </li>
-          </ul>
-
           <a
-            className="custom_btn  animate__animated animate__slow animate__fadeInUp animate__delay-5s"
+            className="btn_outline"
             href="Shady_Agamy_Frontend_Developer_CV.pdf"
             target="_blank"
+            rel="noopener noreferrer"
             download
           >
-            Download cv
+            Download CV
           </a>
         </div>
+
+        <dl
+          ref={info.ref}
+          className={`info_list about_facts ${fadeInClass(info.state, "animate__delay-1s")}`}
+        >
+          {facts.map(({ label, value }) => (
+            <div key={label} className="info_list_row">
+              <dt>{label}</dt>
+              <dd>{value}</dd>
+            </div>
+          ))}
+        </dl>
       </div>
     </div>
   );
