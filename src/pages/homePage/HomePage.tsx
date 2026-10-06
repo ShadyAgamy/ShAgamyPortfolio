@@ -10,7 +10,7 @@ export default function HomePage() {
         Hi, I am <span className="co_main">Shady Agamy</span>
       </h1>
       <p>
-        Frontend developer with 6+ years of experience in web development,
+        Senior frontend developer with 6+ years of experience in web development,
         four of them focused on React &#38; TypeScript. At PlanRadar, a B2B
         construction SaaS used across Europe, I built the approvals feature
         and the core of the shared filter system in a large-scale codebase.

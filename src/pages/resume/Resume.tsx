@@ -13,6 +13,7 @@ const skills = [
     category: "Frameworks & Libraries",
     items: [
       "React",
+      "Next.js",
       "Redux",
       "Redux-Saga",
       "Zustand",

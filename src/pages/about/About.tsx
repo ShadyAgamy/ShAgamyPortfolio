@@ -34,7 +34,7 @@ export default function About() {
             I am <span className="co_main">Shady Agamy</span>
           </h2>
           <p>
-            I'm a frontend developer with 6+ years in web development, four of
+            I'm a senior frontend developer with 6+ years in web development, four of
             them focused on React and TypeScript at PlanRadar &#8212; a B2B
             construction SaaS used across Europe. There, I've owned features
             end to end: the approvals module from scratch, the shared filter
