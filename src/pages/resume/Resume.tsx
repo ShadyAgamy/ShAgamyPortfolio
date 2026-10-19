@@ -51,6 +51,17 @@ const skills = [
 
 const workExperience = [
   {
+    id: 0,
+    role: "Arabic SME, AI Evaluation (Freelance)",
+    company: "Lilt",
+    period: "Sep 2026 - Oct 2026",
+    companyLink: "https://lilt.com/",
+    desc: [
+      "Wrote Arabic rubric criteria for the WebGen Benchmark, used by an automated Claude judge to score AI-generated web apps.",
+      "Tools: Python, Docker, GitHub PR workflow.",
+    ],
+  },
+  {
     id: 1,
     role: "Frontend Developer",
     company: "PlanRadar",
