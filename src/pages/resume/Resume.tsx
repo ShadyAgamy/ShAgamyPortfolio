@@ -68,11 +68,13 @@ const workExperience = [
     period: "Jul 2022 - Aug 2026",
     companyLink: "https://www.planradar.com/",
     desc: [
-      "Built the approvals feature from scratch with one colleague: approval cycles for tickets and documents. Created its shared state context and around 15 of its core files, running inside Tickets and Document Management, the two most used pages in the product, with its own section in the main navigation containing five views.",
-      "Designed the cross-view sync that keeps approval state consistent across parts of the app that do not share a provider tree, using a browser event bus and a counter token to drop stale results.",
-      "Created the core of a shared filter system that brought filtering to 7 list views that had none before, including tickets and documents - the React Context provider, the URL sync and the routing params - so a new view adopts filtering by wrapping in the provider with no new state code.",
-      "Built features in the Document Management System, a Google Drive-style file store: the file and folder uploader with upload progress indicators, and the version modal that lets users upload multiple versions of a file and compare them.",
-      "Built the in-app support chatbot as a standalone Preact app for small bundle size and isolation from the main codebase, bundled as a self-contained widget with real-time chat over WebSocket.",
+      "Built the approvals feature from scratch with one colleague. Tickets and documents used to go in with no review. Now they pass through an approval cycle, with the status shown in lists and item details. It runs inside Tickets and Document Management, the two most-used pages, and has its own navigation section with five views.",
+      "Designed the cross-view sync that keeps approval state consistent across parts of the app that do not share a provider tree. A browser event bus triggers a refetch of the source of truth.",
+      "Created the core of a shared filter system that brought filtering to 7 list views that had none, including Tickets and Documents. Many of these views had thousands of items, so users had to scroll or use basic search. Now they can filter by multiple criteria.",
+      "Built the React Context provider, URL sync, and routing params, so a new view can adopt filtering by wrapping it in the provider, with no new state code required.",
+      "Worked across a 21-bundle React and TypeScript codebase running three generations of state management during an active migration. Reviewed merge requests daily for the whole frontend team, including the tech lead’s.",
+      "Built features in the Document Management System, a Google Drive-style file store. Created the file and folder uploader with upload progress indicators, and the version modal that lets users upload multiple versions of a file and compare them.",
+      "Built the in-app support chatbot as a standalone Preact app, chosen for small bundle size and isolation from the main codebase. Shipped as a self-contained widget with an init API the main app calls to mount it. Real-time chat over WebSocket.",
     ],
   },
   {
@@ -82,8 +84,8 @@ const workExperience = [
     period: "Sep 2020 - Jan 2022",
     companyLink: "https://expandcart.com/en/",
     desc: [
-      "Converted existing HTML templates into server-side templates using the Twig templating engine.",
-      "Maintained and fixed UI issues across the e-commerce platform's storefront templates.",
+      "Converted static HTML storefront themes into server-side Twig templates for Arabic and English stores.",
+      "Maintained multiple storefront themes, fixing responsive, cross-browser and RTL layout issues.",
     ],
   },
   {
@@ -92,7 +94,9 @@ const workExperience = [
     company: "Road9 Media",
     period: "Jul 2019 - Aug 2020",
     companyLink: "https://road9media.com/",
-    desc: ["Turned UX/UI designs into responsive, cross-browser websites."],
+    desc: [
+      "Turned UX/UI designs into responsive, cross-browser websites for client projects.",
+    ],
   },
 ];
 
