@@ -46,10 +46,9 @@ export default function About() {
           </p>
           <a
             className="btn_outline"
-            href="Shady_Agamy_Frontend_Developer_CV.pdf"
+            href="https://docs.google.com/document/d/1yY5HxKWnivF8383zYpB-DTTusxsNX6geDC_cLaBHXpI/export?format=pdf"
             target="_blank"
             rel="noopener noreferrer"
-            download
           >
             Download CV
           </a>
