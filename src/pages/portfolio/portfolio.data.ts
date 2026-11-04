@@ -7,9 +7,10 @@ export const projects = [
     name: "Dr. Ramy Agamy Clinics",
     url: "https://ramyagamy.com/en",
     desc:
-      "Website for an obstetrics and gynecology practice. Bilingual Arabic/English with full RTL, " +
-      "an MDX-based articles section, pregnancy calculators, and WhatsApp/phone booking. " +
-      "Full SEO setup: localized metadata, hreflang alternates, and JSON-LD structured data.",
+      "Content-driven site for an OB/GYN and fertility practice. Patient-facing tools like the " +
+      "due-date and ovulation calculators, an MDX articles section, and per-clinic location pages. " +
+      "Built for search: JSON-LD structured data, hreflang alternates, and localized metadata " +
+      "across Arabic and English.",
     meta: "Freelance client work.",
     imgSrc: img("ramy-agamy.png"),
     stack: [
@@ -26,8 +27,9 @@ export const projects = [
     name: "Bright Future",
     url: "https://brightfutureid.net/en/",
     desc:
-      "Company site for a seafood import/export business in Oman. Bilingual Arabic/English with " +
-      "RTL support and localized SEO metadata, statically exported and deployed to GitHub Pages.",
+      "Arabic-first company site for a seafood import/export business in Oman, with a mirrored " +
+      "right-to-left layout and an English version. Shipped as a fully static Next.js export " +
+      "on GitHub Pages: no server to run, near-zero hosting cost for the client.",
     meta: "Freelance client work.",
     imgSrc: img("bright-future.png"),
     stack: ["Next.js", "TypeScript", "Tailwind CSS", "GitHub Pages"],
