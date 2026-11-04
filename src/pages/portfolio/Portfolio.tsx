@@ -41,9 +41,17 @@ const ProjectCard = ({ name, url, desc, meta, imgSrc, stack }: ProjectCardProps)
   const { ref, state } = useReveal<HTMLElement>("portfolio");
   return (
     <article ref={ref} className={`port_item ${fadeInClass(state)}`}>
-      <div className="port_item_frame">
-        <img src={imgSrc} alt={`${name} screenshot`} />
-      </div>
+      {/* Duplicate of the text link below, so it's skipped by keyboard and screen readers. */}
+      <a
+        className="port_item_frame"
+        href={url}
+        target="_blank"
+        rel="noopener noreferrer"
+        tabIndex={-1}
+        aria-hidden="true"
+      >
+        <img src={imgSrc} alt="" />
+      </a>
       <div className="port_item_body">
         <div className="port_item_head">
           <h3>{name}</h3>

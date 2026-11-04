@@ -3,6 +3,36 @@ const img = (name: string) =>
 
 export const projects = [
   {
+    id: "ramy-agamy",
+    name: "Dr. Ramy Agamy Clinics",
+    url: "https://ramyagamy.com/en",
+    desc:
+      "Website for an obstetrics and gynecology practice. Bilingual Arabic/English with full RTL, " +
+      "an MDX-based articles section, pregnancy calculators, and WhatsApp/phone booking. " +
+      "Full SEO setup: localized metadata, hreflang alternates, and JSON-LD structured data.",
+    meta: "Freelance client work.",
+    imgSrc: img("ramy-agamy.png"),
+    stack: [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "next-intl",
+      "MDX",
+      "Vercel",
+    ],
+  },
+  {
+    id: "bright-future",
+    name: "Bright Future",
+    url: "https://brightfutureid.net/en/",
+    desc:
+      "Company site for a seafood import/export business in Oman. Bilingual Arabic/English with " +
+      "RTL support and localized SEO metadata, statically exported and deployed to GitHub Pages.",
+    meta: "Freelance client work.",
+    imgSrc: img("bright-future.png"),
+    stack: ["Next.js", "TypeScript", "Tailwind CSS", "GitHub Pages"],
+  },
+  {
     id: "cover-letter-ai",
     name: "Cover Letter AI",
     url: "https://cover-letter-ai-nu.vercel.app",
